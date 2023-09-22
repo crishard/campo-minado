@@ -25,7 +25,8 @@ class CampoMinado:
         self.frame.grid(row=0, column=0, padx=10, pady=10)
 
         menu_frame = tk.Frame(self.frame)
-        menu_frame.grid(row=self.rows, column=0, columnspan=self.cols, padx=10, pady=10)
+        menu_frame.grid(row=self.rows, column=0,
+                        columnspan=self.cols, padx=10, pady=10)
 
         button1 = tk.Button(menu_frame, text="Descobrir")
         button2 = tk.Button(menu_frame, text="Add Bandeira")
@@ -40,11 +41,12 @@ class CampoMinado:
 
         for row in range(self.rows):
             for col in range(self.cols):
-                button = tk.Button(self.frame, text='', command=lambda r=row, c=col: self.on_button_click(r, c), width=2)
+                button = tk.Button(self.frame, text='', command=lambda r=row,
+                                   c=col: self.on_button_click(r, c), width=2)
                 button.grid(row=row, column=col)
                 self.buttons[row][col] = button
-                button.bind("<Button-3>", lambda event, r=row, c=col: self.on_right_click(event, r, c))
-
+                button.bind("<Button-3>", lambda event, r=row,
+                            c=col: self.on_right_click(event, r, c))
 
     def place_bombs(self):
         bomb_count = 0
@@ -56,7 +58,7 @@ class CampoMinado:
                 bomb_count += 1
 
     def update_time(self):
-        if self.started and not self.game_over:
+        if self.started and not self.game_over and not self.is_game_over:
             elapsed_time = int((time.time() - self.start_time))
             self.time_label.config(text=f"Tempo: {elapsed_time}")
             self.root.after(1000, self.update_time)
@@ -66,11 +68,16 @@ class CampoMinado:
             self.game_over = True
             self.time_label.config(text="Você venceu!")
 
+    def reveal_all_bombs(self):
+        for row in range(self.rows):
+            for col in range(self.cols):
+                if self.field[row][col] == -1:
+                    self.buttons[row][col].config(text='💣')
+
     def end_game(self):
         self.is_game_over = True
         self.time_label.config(text="Você perdeu!")
-
-
+        self.reveal_all_bombs()
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -84,6 +91,7 @@ class CampoMinado:
                             if self.field[row + dr][col + dc] == -1:
                                 bomb_count += 1
                 self.field[row][col] = bomb_count
+# Display mine symbol for all mines
 
     def on_button_click(self, row, col):
         if not self.started:
@@ -95,32 +103,14 @@ class CampoMinado:
             return
 
         if self.field[row][col] == -1:
-            self.end_game() 
+            self.end_game()
         else:
+            bomb_count = self.field[row][col]
+            # Mostra o número de bombas
+            self.buttons[row][col].config(text=str(bomb_count))
             self.flags[row][col] = True
-            self.buttons[row][col].config(text='🚩')
 
         self.check_game_over()
-
-
-    def on_right_click(self, event, row, col):
-        if not self.started or self.game_over:
-            return
-
-        if not self.flags[row][col]:
-            self.flags[row][col] = True
-            self.buttons[row][col].config(text='🚩')
-        else:
-            self.flags[row][col] = False
-            self.buttons[row][col].config(text='')
-
-        self.check_game_over()
-
-    def end_game(self):
-        self.game_over = True
-        self.time_label.config(text="Você perdeu!")
-
-
 
 
 def start_game(rows, cols, bombs, root):
@@ -128,6 +118,7 @@ def start_game(rows, cols, bombs, root):
         widget.destroy()
 
     game = CampoMinado(root, rows, cols, bombs)
+
 
 def main():
     root = tk.Tk()
@@ -146,9 +137,12 @@ def main():
         def start_game_button(difficulty):
             show_game(difficulty)
 
-        easy_button = tk.Button(frame, text="Fácil", command=lambda: start_game_button("Fácil"))
-        intermediate_button = tk.Button(frame, text="Intermediário", command=lambda: start_game_button("Intermediário"))
-        hard_button = tk.Button(frame, text="Difícil", command=lambda: start_game_button("Difícil"))
+        easy_button = tk.Button(frame, text="Fácil",
+                                command=lambda: start_game_button("Fácil"))
+        intermediate_button = tk.Button(
+            frame, text="Intermediário", command=lambda: start_game_button("Intermediário"))
+        hard_button = tk.Button(frame, text="Difícil",
+                                command=lambda: start_game_button("Difícil"))
 
         easy_button.grid(row=1, column=0, padx=10, pady=10)
         intermediate_button.grid(row=1, column=1, padx=10, pady=10)
@@ -165,6 +159,7 @@ def main():
     show_difficulty_menu()
 
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
