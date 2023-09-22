@@ -64,7 +64,7 @@ class CampoMinado:
             self.root.after(1000, self.update_time)
 
     def check_game_over(self):
-        if all(self.field[row][col] == -1 or self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
+        if all(self.field[row][col] == -1 and self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
             self.game_over = True
             self.time_label.config(text="Você venceu!")
 
@@ -99,7 +99,6 @@ class CampoMinado:
 
         if self.buttons[row][col]['text'] == '':
             if not self.flags[row][col] and self.bomb_count < self.bombs:
-                # self.buttons[row][col].config(text='🚩')
                 self.buttons[row][col].config(text='🏳')
                 self.flags[row][col] = True
                 self.bomb_count += 1
