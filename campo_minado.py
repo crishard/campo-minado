@@ -1,5 +1,7 @@
 import tkinter as tk
 import random
+import time
+
 
 class CampoMinado:
     def __init__(self, root, rows, cols, bombs):
@@ -9,18 +11,40 @@ class CampoMinado:
         self.bombs = bombs
         self.field = [[0 for _ in range(cols)] for _ in range(rows)]
         self.buttons = [[None for _ in range(cols)] for _ in range(rows)]
+        self.flags = [[False for _ in range(cols)] for _ in range(rows)]
+        self.started = False
+        self.game_over = False
+        self.is_game_over = False
+        self.start_time = None
         self.create_widgets()
         self.place_bombs()
         self.calculate_numbers()
 
     def create_widgets(self):
         self.frame = tk.Frame(self.root)
-        self.frame.pack()
+        self.frame.grid(row=0, column=0, padx=10, pady=10)
+
+        menu_frame = tk.Frame(self.frame)
+        menu_frame.grid(row=self.rows, column=0, columnspan=self.cols, padx=10, pady=10)
+
+        button1 = tk.Button(menu_frame, text="Descobrir")
+        button2 = tk.Button(menu_frame, text="Add Bandeira")
+        button3 = tk.Button(menu_frame, text="Remove bandeira")
+
+        button1.grid(row=0, column=0, padx=10, pady=10)
+        button2.grid(row=0, column=1, padx=10, pady=10)
+        button3.grid(row=0, column=2, padx=10, pady=10)
+
+        self.time_label = tk.Label(menu_frame, text="Tempo: 0")
+        self.time_label.grid(row=0, column=3, padx=10, pady=10)
+
         for row in range(self.rows):
             for col in range(self.cols):
-                button = tk.Button(self.frame, width=2, height=1, command=lambda r=row, c=col: self.on_button_click(r, c))
+                button = tk.Button(self.frame, text='', command=lambda r=row, c=col: self.on_button_click(r, c), width=2)
                 button.grid(row=row, column=col)
                 self.buttons[row][col] = button
+                button.bind("<Button-3>", lambda event, r=row, c=col: self.on_right_click(event, r, c))
+
 
     def place_bombs(self):
         bomb_count = 0
@@ -30,6 +54,23 @@ class CampoMinado:
             if self.field[row][col] == 0:
                 self.field[row][col] = -1
                 bomb_count += 1
+
+    def update_time(self):
+        if self.started and not self.game_over:
+            elapsed_time = int((time.time() - self.start_time))
+            self.time_label.config(text=f"Tempo: {elapsed_time}")
+            self.root.after(1000, self.update_time)
+
+    def check_game_over(self):
+        if all(self.field[row][col] == -1 or self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
+            self.game_over = True
+            self.time_label.config(text="Você venceu!")
+
+    def end_game(self):
+        self.is_game_over = True
+        self.time_label.config(text="Você perdeu!")
+
+
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -45,17 +86,41 @@ class CampoMinado:
                 self.field[row][col] = bomb_count
 
     def on_button_click(self, row, col):
-        if self.field[row][col] == -1:
-            self.buttons[row][col].config(text="X", state="disabled")
-            self.game_over()
-        else:
-            self.buttons[row][col].config(text=str(self.field[row][col]), state="disabled")
+        if not self.started:
+            self.started = True
+            self.start_time = time.time()
+            self.update_time()
 
-    def game_over(self):
-        for row in range(self.rows):
-            for col in range(self.cols):
-                if self.field[row][col] == -1:
-                    self.buttons[row][col].config(text="X", state="disabled")
+        if self.is_game_over or self.flags[row][col]:
+            return
+
+        if self.field[row][col] == -1:
+            self.end_game() 
+        else:
+            self.flags[row][col] = True
+            self.buttons[row][col].config(text='🚩')
+
+        self.check_game_over()
+
+
+    def on_right_click(self, event, row, col):
+        if not self.started or self.game_over:
+            return
+
+        if not self.flags[row][col]:
+            self.flags[row][col] = True
+            self.buttons[row][col].config(text='🚩')
+        else:
+            self.flags[row][col] = False
+            self.buttons[row][col].config(text='')
+
+        self.check_game_over()
+
+    def end_game(self):
+        self.game_over = True
+        self.time_label.config(text="Você perdeu!")
+
+
 
 
 def start_game(rows, cols, bombs, root):
