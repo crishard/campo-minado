@@ -1,3 +1,6 @@
+import tkinter as tk
+import random
+
 class CampoMinado:
     def __init__(self, root, rows, cols, bombs):
         self.root = root
