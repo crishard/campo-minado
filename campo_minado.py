@@ -57,28 +57,49 @@ class CampoMinado:
                 if self.field[row][col] == -1:
                     self.buttons[row][col].config(text="X", state="disabled")
 
-def start_game(rows, cols, bombs):
-    root = tk.Tk()
-    root.title("Campo Minado")
+
+def start_game(rows, cols, bombs, root):
+    for widget in root.winfo_children():
+        widget.destroy()
+
     game = CampoMinado(root, rows, cols, bombs)
-    root.mainloop()
 
 def main():
-    print("Escolha o nível de dificuldade:")
-    print("1 - Fácil (8x8 com 10 bombas)")
-    print("2 - Intermediário (10x16 com 30 bombas)")
-    print("3 - Difícil (24x24 com 100 bombas)")
-    
-    choice = input("Digite o número do nível: ")
-    
-    if choice == "1":
-        start_game(8, 8, 10)
-    elif choice == "2":
-        start_game(10, 16, 30)
-    elif choice == "3":
-        start_game(24, 24, 100)
-    else:
-        print("Escolha inválida. Por favor, escolha um nível válido.")
+    root = tk.Tk()
+    root.title("Campo Minado")
+
+    def show_difficulty_menu():
+        for widget in root.winfo_children():
+            widget.destroy()
+
+        frame = tk.Frame(root)
+        frame.grid(row=0, column=0, padx=10, pady=10)
+
+        label = tk.Label(frame, text="Escolha o nível de dificuldade:")
+        label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+
+        def start_game_button(difficulty):
+            show_game(difficulty)
+
+        easy_button = tk.Button(frame, text="Fácil", command=lambda: start_game_button("Fácil"))
+        intermediate_button = tk.Button(frame, text="Intermediário", command=lambda: start_game_button("Intermediário"))
+        hard_button = tk.Button(frame, text="Difícil", command=lambda: start_game_button("Difícil"))
+
+        easy_button.grid(row=1, column=0, padx=10, pady=10)
+        intermediate_button.grid(row=1, column=1, padx=10, pady=10)
+        hard_button.grid(row=1, column=2, padx=10, pady=10)
+
+    def show_game(difficulty):
+        if difficulty == "Fácil":
+            start_game(8, 8, 10, root)
+        elif difficulty == "Intermediário":
+            start_game(10, 16, 30, root)
+        elif difficulty == "Difícil":
+            start_game(24, 24, 100, root)
+
+    show_difficulty_menu()
+
+    root.mainloop()
 
 if __name__ == "__main__":
     main()
