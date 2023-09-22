@@ -2,7 +2,6 @@ import tkinter as tk
 import random
 import time
 
-
 class CampoMinado:
     def __init__(self, root, rows, cols, bombs):
         self.root = root
@@ -16,6 +15,7 @@ class CampoMinado:
         self.game_over = False
         self.is_game_over = False
         self.start_time = None
+        self.bomb_count = 0 
         self.create_widgets()
         self.place_bombs()
         self.calculate_numbers()
@@ -74,6 +74,7 @@ class CampoMinado:
                 if self.field[row][col] == -1:
                     self.buttons[row][col].config(text='💣')
 
+
     def end_game(self):
         self.is_game_over = True
         self.time_label.config(text="Você perdeu!")
@@ -91,7 +92,21 @@ class CampoMinado:
                             if self.field[row + dr][col + dc] == -1:
                                 bomb_count += 1
                 self.field[row][col] = bomb_count
-# Display mine symbol for all mines
+
+    def on_right_click(self, event, row, col):
+        if self.is_game_over:
+            return
+
+        if self.buttons[row][col]['text'] == '':
+            if not self.flags[row][col] and self.bomb_count < self.bombs:
+                # self.buttons[row][col].config(text='🚩')
+                self.buttons[row][col].config(text='🏳')
+                self.flags[row][col] = True
+                self.bomb_count += 1
+        elif self.buttons[row][col]['text'] == '🏳':
+            self.buttons[row][col].config(text='')
+            self.flags[row][col] = False
+            self.bomb_count -= 1
 
     def on_button_click(self, row, col):
         if not self.started:
