@@ -1,0 +1,1 @@
+# Este repositório tem como finalidade o desenvolvimento de um campo minado, o qual sera utilizado para as avaliações da disciplina de Tópicos Especiais II, a qual estamos abordando o tema de testes de software.
