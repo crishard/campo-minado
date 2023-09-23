@@ -15,7 +15,10 @@ class CampoMinado:
         self.game_over = False
         self.is_game_over = False
         self.start_time = None
-        self.bomb_count = 0 
+        self.paused = False
+        self.pause_button = None
+        self.bomb_count = 0
+        self.pause_label = None
         self.create_widgets()
         self.place_bombs()
         self.calculate_numbers()
@@ -24,30 +27,31 @@ class CampoMinado:
         self.frame = tk.Frame(self.root)
         self.frame.grid(row=1, column=1, padx=10, pady=10)
 
-        # Adicionar rótulos para representar as letras (linhas) à esquerda do tabuleiro
+        self.pause_button = tk.Button(self.frame, text='Pausar', command=self.toggle_pause)
+        self.pause_button.grid(row=self.rows + 2, columnspan=self.cols + 1, pady=5)
+        self.pause_label = tk.Label(self.frame, text='')
+        self.pause_label.grid(row=self.rows + 3, columnspan=self.cols + 1, pady=5)
+
         for row in range(self.rows):
             letter_label = tk.Label(self.frame, text=chr(65 + row))
-            letter_label.grid(row=row + 1, column=0, padx=3)  # Coluna 0 para as letras
+            letter_label.grid(row=row + 1, column=0, padx=3)
 
-        # Adicionar rótulos para representar os números (colunas) acima do tabuleiro
         for col in range(self.cols):
             number_label = tk.Label(self.frame, text=str(col + 1), pady=2)
-            number_label.grid(row=0, column=col + 1)  # Começar na coluna 1 para os números
-
-        # Resto do seu código para criar os botões
+            number_label.grid(row=0, column=col + 1)
 
         for row in range(self.rows):
             for col in range(self.cols):
                 button = tk.Button(self.frame, text='', command=lambda r=row,
                                    c=col: self.on_button_click(r, c), width=2)
-                button.grid(row=row + 1, column=col + 1)  # Começar na linha 1 e coluna 1 para os botões
+                button.grid(row=row + 1, column=col + 1)
                 self.buttons[row][col] = button
                 button.bind("<Button-3>", lambda event, r=row,
                             c=col: self.on_right_click(event, r, c))
 
-        # Adicionar o rótulo para o tempo abaixo do tabuleiro
         self.time_label = tk.Label(self.frame, text="Tempo: 0")
-        self.time_label.grid(row=self.rows + 1, columnspan=self.cols + 1, pady=15)  # Coluna extra para o tempo
+        self.time_label.grid(
+            row=self.rows + 1, columnspan=self.cols + 1, pady=8)
 
     def place_bombs(self):
         bomb_count = 0
@@ -58,9 +62,23 @@ class CampoMinado:
                 self.field[row][col] = -1
                 bomb_count += 1
 
+    def toggle_pause(self):
+        self.paused = not self.paused
+        if self.paused:
+            self.pause_button.config(text='Retomar')
+            self.pause_label.config(text='Você precisa retomar o jogo para realizar alguma ação.')
+        else:
+            self.pause_button.config(text='Pausar')
+            self.pause_label.config(text='')
+            if self.started:
+                self.start_time = time.time() - (self.current_time - self.start_time)
+                self.update_time()
+
+
     def update_time(self):
-        if self.started and not self.game_over and not self.is_game_over:
-            elapsed_time = int((time.time() - self.start_time))
+        if self.started and not self.game_over and not self.is_game_over and not self.paused:
+            self.current_time = time.time()  # Registre o tempo atual.
+            elapsed_time = int((self.current_time - self.start_time))
             self.time_label.config(text=f"Tempo: {elapsed_time}")
             self.root.after(1000, self.update_time)
 
@@ -69,19 +87,16 @@ class CampoMinado:
             self.game_over = True
             self.time_label.config(text="Você venceu!")
 
-
     def reveal_all_bombs(self):
         for row in range(self.rows):
             for col in range(self.cols):
                 if self.field[row][col] == -1:
                     self.buttons[row][col].config(text='💣')
 
-
     def end_game(self):
         self.game_over = True
         self.time_label.config(text="Você perdeu!")
         self.reveal_all_bombs()
-
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -97,7 +112,7 @@ class CampoMinado:
                 self.field[row][col] = bomb_count
 
     def on_right_click(self, event, row, col):
-        if self.game_over or self.flags[row][col]:
+        if self.game_over or self.flags[row][col] or self.paused:
             return
 
         if self.buttons[row][col]['text'] == '':
@@ -111,7 +126,7 @@ class CampoMinado:
             self.bomb_count -= 1
 
     def on_button_click(self, row, col):
-        if self.game_over or self.is_game_over:
+        if self.game_over or self.is_game_over or self.flags[row][col] or self.paused:
             return
 
         if not self.started:
@@ -126,7 +141,6 @@ class CampoMinado:
             self.end_game()
         else:
             bomb_count = self.field[row][col]
-            # Mostra o número de bombas
             self.buttons[row][col].config(text=str(bomb_count))
             self.flags[row][col] = True
 
