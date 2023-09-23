@@ -22,31 +22,32 @@ class CampoMinado:
 
     def create_widgets(self):
         self.frame = tk.Frame(self.root)
-        self.frame.grid(row=0, column=0, padx=10, pady=10)
+        self.frame.grid(row=1, column=1, padx=10, pady=10)
 
-        menu_frame = tk.Frame(self.frame)
-        menu_frame.grid(row=self.rows, column=0,
-                        columnspan=self.cols, padx=10, pady=10)
+        # Adicionar rótulos para representar as letras (linhas) à esquerda do tabuleiro
+        for row in range(self.rows):
+            letter_label = tk.Label(self.frame, text=chr(65 + row))
+            letter_label.grid(row=row + 1, column=0, padx=3)  # Coluna 0 para as letras
 
-        button1 = tk.Button(menu_frame, text="Descobrir")
-        button2 = tk.Button(menu_frame, text="Add Bandeira")
-        button3 = tk.Button(menu_frame, text="Remove bandeira")
+        # Adicionar rótulos para representar os números (colunas) acima do tabuleiro
+        for col in range(self.cols):
+            number_label = tk.Label(self.frame, text=str(col + 1), pady=2)
+            number_label.grid(row=0, column=col + 1)  # Começar na coluna 1 para os números
 
-        button1.grid(row=0, column=0, padx=10, pady=10)
-        button2.grid(row=0, column=1, padx=10, pady=10)
-        button3.grid(row=0, column=2, padx=10, pady=10)
-
-        self.time_label = tk.Label(menu_frame, text="Tempo: 0")
-        self.time_label.grid(row=0, column=3, padx=10, pady=10)
+        # Resto do seu código para criar os botões
 
         for row in range(self.rows):
             for col in range(self.cols):
                 button = tk.Button(self.frame, text='', command=lambda r=row,
                                    c=col: self.on_button_click(r, c), width=2)
-                button.grid(row=row, column=col)
+                button.grid(row=row + 1, column=col + 1)  # Começar na linha 1 e coluna 1 para os botões
                 self.buttons[row][col] = button
                 button.bind("<Button-3>", lambda event, r=row,
                             c=col: self.on_right_click(event, r, c))
+
+        # Adicionar o rótulo para o tempo abaixo do tabuleiro
+        self.time_label = tk.Label(self.frame, text="Tempo: 0")
+        self.time_label.grid(row=self.rows + 1, columnspan=self.cols + 1, pady=15)  # Coluna extra para o tempo
 
     def place_bombs(self):
         bomb_count = 0
@@ -64,9 +65,10 @@ class CampoMinado:
             self.root.after(1000, self.update_time)
 
     def check_game_over(self):
-        if all(self.field[row][col] == -1 and self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
+        if all(self.field[row][col] == -1 or self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
             self.game_over = True
             self.time_label.config(text="Você venceu!")
+
 
     def reveal_all_bombs(self):
         for row in range(self.rows):
@@ -76,9 +78,10 @@ class CampoMinado:
 
 
     def end_game(self):
-        self.is_game_over = True
+        self.game_over = True
         self.time_label.config(text="Você perdeu!")
         self.reveal_all_bombs()
+
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -94,7 +97,7 @@ class CampoMinado:
                 self.field[row][col] = bomb_count
 
     def on_right_click(self, event, row, col):
-        if self.is_game_over:
+        if self.game_over or self.flags[row][col]:
             return
 
         if self.buttons[row][col]['text'] == '':
@@ -108,6 +111,9 @@ class CampoMinado:
             self.bomb_count -= 1
 
     def on_button_click(self, row, col):
+        if self.game_over or self.is_game_over:
+            return
+
         if not self.started:
             self.started = True
             self.start_time = time.time()
@@ -164,7 +170,7 @@ def main():
 
     def show_game(difficulty):
         if difficulty == "Fácil":
-            start_game(8, 8, 10, root)
+            start_game(8, 8, 1, root)
         elif difficulty == "Intermediário":
             start_game(10, 16, 30, root)
         elif difficulty == "Difícil":
