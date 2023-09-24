@@ -180,8 +180,7 @@ def main():
             pass
 
         def close_game():
-            # Implemente a lógica para exibir um tutorial sobre como jogar o Campo Minado na mesma tela
-            pass
+            root.destroy()
 
         def start_game_button(difficulty):
             show_game(difficulty)
