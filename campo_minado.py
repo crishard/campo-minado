@@ -2,6 +2,7 @@ import tkinter as tk
 import random
 import datetime
 
+
 class CampoMinado:
     def __init__(self, root, rows, cols, bombs, show_difficulty_menu):
         self.root = root
@@ -31,13 +32,19 @@ class CampoMinado:
         self.frame = tk.Frame(self.root)
         self.frame.grid(row=1, column=1, padx=10, pady=10)
 
-        self.pause_button = tk.Button(
-            self.frame, text='Pausar', command=self.toggle_pause)
-        self.pause_button.grid(
-            row=self.rows + 2, columnspan=self.cols + 1, pady=5)
         self.pause_label = tk.Label(self.frame, text='')
         self.pause_label.grid(
             row=self.rows + 3, columnspan=self.cols + 1, pady=5)
+        button_frame = tk.Frame(self.frame)
+        button_frame.grid(row=self.rows + 2, columnspan=self.cols + 1, pady=5)
+
+        self.pause_button = tk.Button(
+            button_frame, text='Pausar', command=self.toggle_pause)
+        self.pause_button.pack(side=tk.LEFT, padx=10)
+
+        self.abandon_button = tk.Button(
+            button_frame, text='Abandonar', command=self.abandon_game)
+        self.abandon_button.pack(side=tk.LEFT, padx=10)
 
         for row in range(self.rows):
             letter_label = tk.Label(self.frame, text=chr(65 + row))
@@ -69,9 +76,13 @@ class CampoMinado:
                 self.field[row][col] = -1
                 bomb_count += 1
 
+    def abandon_game(self):
+        if not self.game_over:
+            self.show_difficulty_menu()
+
     def toggle_pause(self):
-        if self.pause_button_enabled: 
-                
+        if self.pause_button_enabled:
+
             if not self.game_over:  # Verifique se o jogo ainda está em andamento
                 self.paused = not self.paused
                 if self.paused:
@@ -87,8 +98,8 @@ class CampoMinado:
                         self.start_time += self.current_time - self.pause_start_time
                         self.update_time()
         else:
-            self.pause_label.config(text='O jogo acabou.')  # Exiba uma mensagem quando o jogo acabar
-   
+            # Exiba uma mensagem quando o jogo acabar
+            self.pause_label.config(text='O jogo acabou.')
 
     def update_time(self):
         if self.started and not self.game_over and not self.is_game_over and not self.paused:
@@ -102,18 +113,19 @@ class CampoMinado:
         defeat_popup = tk.Toplevel(self.root, padx=10, pady=10)
         defeat_popup.title("Derrota")
         defeat_message = "Você perdeu o jogo. Tente novamente!"
-        defeat_label = tk.Label(defeat_popup, text=defeat_message, padx=20, pady=20)
+        defeat_label = tk.Label(
+            defeat_popup, text=defeat_message, padx=20, pady=20)
         defeat_label.pack()
-        
+
         def return_to_menu():
             defeat_popup.destroy()  # Feche a janela de derrota
             for widget in self.root.winfo_children():
                 widget.destroy()
             self.show_difficulty_menu()
-        
-        ok_button = tk.Button(defeat_popup, text="Voltar ao menu", command=return_to_menu)
-        ok_button.pack()
 
+        ok_button = tk.Button(
+            defeat_popup, text="Voltar ao menu", command=return_to_menu)
+        ok_button.pack()
 
     def show_victory_popup(self):
         if self.victory_time:
@@ -257,7 +269,7 @@ def main():
             # Adicione um botão "Voltar" para retornar à tela de menu principal
             back_button = tk.Button(
                 root, text="Voltar ao Menu", command=show_difficulty_menu, pady=10)
-            back_button.pack()
+            back_button.pack(side=tk.BOTTOM, pady=10)
 
         def close_game():
             root.destroy()
