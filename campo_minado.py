@@ -88,7 +88,7 @@ class CampoMinado:
                         self.update_time()
         else:
             self.pause_label.config(text='O jogo acabou.')  # Exiba uma mensagem quando o jogo acabar
-
+   
 
     def update_time(self):
         if self.started and not self.game_over and not self.is_game_over and not self.paused:
@@ -112,16 +112,18 @@ class CampoMinado:
 
             victory_popup = tk.Toplevel(self.root, padx=10, pady=10)
             victory_popup.title("Vitória")
-            victory_label = tk.Label(victory_popup, text=victory_message, padx=20, pady=20)
+            victory_label = tk.Label(
+                victory_popup, text=victory_message, padx=20, pady=20)
             victory_label.pack()
-            ok_button = tk.Button(victory_popup, text="OK", command=return_to_menu)
+            ok_button = tk.Button(victory_popup, text="OK",
+                                  command=return_to_menu)
             ok_button.pack()
 
     def check_game_over(self):
         if all(self.field[row][col] == -1 or self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):
             self.game_over = True
             self.victory_time = datetime.datetime.now() - self.start_time
-            self.show_victory_popup() 
+            self.show_victory_popup()
 
     def reveal_all_bombs(self):
         for row in range(self.rows):
@@ -134,7 +136,6 @@ class CampoMinado:
         self.time_label.config(text="Você perdeu!")
         self.reveal_all_bombs()
         self.pause_button_enabled = False  # Bloqueie o botão "Pausar"
-
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -232,13 +233,13 @@ def main():
                 widget.destroy()
 
             tutorial_label = tk.Label(
-                    root, text=tutorial_text, font=("Helvetica", 14), justify="left", padx=20, pady=20)
+                root, text=tutorial_text, font=("Helvetica", 14), justify="left", padx=20, pady=20)
             tutorial_label.pack()
 
             # Adicione um botão "Voltar" para retornar à tela de menu principal
-            back_button = tk.Button(root, text="Voltar ao Menu", command=show_difficulty_menu, pady=10)
+            back_button = tk.Button(
+                root, text="Voltar ao Menu", command=show_difficulty_menu, pady=10)
             back_button.pack()
-
 
         def close_game():
             root.destroy()
