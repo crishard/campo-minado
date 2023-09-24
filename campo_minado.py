@@ -166,7 +166,22 @@ def main():
         frame.grid(row=0, column=0, padx=10, pady=10)
 
         label = tk.Label(frame, text="Escolha o nível de dificuldade:")
+        label2 = tk.Label(frame, text="Mais acoes dentro do jogo")
         label.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
+        label2.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
+
+       
+        def show_history():
+        # Implemente a lógica para exibir o histórico de jogos anteriores na mesma tela
+            pass
+
+        def show_tutorial():
+            # Implemente a lógica para exibir um tutorial sobre como jogar o Campo Minado na mesma tela
+            pass
+
+        def close_game():
+            # Implemente a lógica para exibir um tutorial sobre como jogar o Campo Minado na mesma tela
+            pass
 
         def start_game_button(difficulty):
             show_game(difficulty)
@@ -181,6 +196,18 @@ def main():
         easy_button.grid(row=1, column=0, padx=10, pady=10)
         intermediate_button.grid(row=1, column=1, padx=10, pady=10)
         hard_button.grid(row=1, column=2, padx=10, pady=10)
+         # Adicione um botão de histórico
+        history_button = tk.Button(frame, text='Histórico', command=show_history)
+        history_button.grid(row=3, column=0, padx=10, pady=10)
+
+        # Adicione um botão de tutorial
+        tutorial_button = tk.Button(frame, text='Tutorial', command=show_tutorial)
+        tutorial_button.grid(row=3, column=1, padx=10, pady=10)
+           # Adicione um botão de tutorial
+        close_game_button = tk.Button(frame, text='Sair do jogo', command=close_game)
+        close_game_button.grid(row=3, column=2, padx=10, pady=10)
+
+        
 
     def show_game(difficulty):
         if difficulty == "Fácil":
