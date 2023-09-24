@@ -98,6 +98,23 @@ class CampoMinado:
             self.time_label.config(text=f"Tempo: {elapsed_time_str}")
             self.root.after(1000, self.update_time)
 
+    def show_defeat_popup(self):
+        defeat_popup = tk.Toplevel(self.root, padx=10, pady=10)
+        defeat_popup.title("Derrota")
+        defeat_message = "Você perdeu o jogo. Tente novamente!"
+        defeat_label = tk.Label(defeat_popup, text=defeat_message, padx=20, pady=20)
+        defeat_label.pack()
+        
+        def return_to_menu():
+            defeat_popup.destroy()  # Feche a janela de derrota
+            for widget in self.root.winfo_children():
+                widget.destroy()
+            self.show_difficulty_menu()
+        
+        ok_button = tk.Button(defeat_popup, text="Voltar ao menu", command=return_to_menu)
+        ok_button.pack()
+
+
     def show_victory_popup(self):
         if self.victory_time:
 
@@ -136,6 +153,7 @@ class CampoMinado:
         self.time_label.config(text="Você perdeu!")
         self.reveal_all_bombs()
         self.pause_button_enabled = False  # Bloqueie o botão "Pausar"
+        self.show_defeat_popup()  # Chame a função para exibir a mensagem de derrota
 
     def calculate_numbers(self):
         for row in range(self.rows):
