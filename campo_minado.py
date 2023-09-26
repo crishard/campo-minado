@@ -83,7 +83,7 @@ class CampoMinado:
     def toggle_pause(self):
         if self.pause_button_enabled:
 
-            if not self.game_over:  # Verifique se o jogo ainda está em andamento
+            if not self.game_over:
                 self.paused = not self.paused
                 if self.paused:
                     self.pause_button.config(text='Retomar')
@@ -98,7 +98,6 @@ class CampoMinado:
                         self.start_time += self.current_time - self.pause_start_time
                         self.update_time()
         else:
-            # Exiba uma mensagem quando o jogo acabar
             self.pause_label.config(text='O jogo acabou.')
 
     def update_time(self):
@@ -118,7 +117,7 @@ class CampoMinado:
         defeat_label.pack()
 
         def return_to_menu():
-            defeat_popup.destroy()  # Feche a janela de derrota
+            defeat_popup.destroy()
             for widget in self.root.winfo_children():
                 widget.destroy()
             self.show_difficulty_menu()
@@ -164,8 +163,8 @@ class CampoMinado:
         self.game_over = True
         self.time_label.config(text="Você perdeu!")
         self.reveal_all_bombs()
-        self.pause_button_enabled = False  # Bloqueie o botão "Pausar"
-        self.show_defeat_popup()  # Chame a função para exibir a mensagem de derrota
+        self.pause_button_enabled = False
+        self.show_defeat_popup()
 
     def calculate_numbers(self):
         for row in range(self.rows):
@@ -181,14 +180,13 @@ class CampoMinado:
                 self.field[row][col] = bomb_count
 
     def on_right_click(self, event, row, col):
-        if self.game_over or self.flags[row][col] or self.paused:
+        if self.game_over or self.paused:
             return
 
-        if self.buttons[row][col]['text'] == '':
-            if not self.flags[row][col] and self.bomb_count < self.bombs:
-                self.buttons[row][col].config(text='🏳')
-                self.flags[row][col] = True
-                self.bomb_count += 1
+        if not self.flags[row][col] and self.bomb_count < self.bombs:
+            self.buttons[row][col].config(text='🏳')
+            self.flags[row][col] = True
+            self.bomb_count += 1
         elif self.buttons[row][col]['text'] == '🏳':
             self.buttons[row][col].config(text='')
             self.flags[row][col] = False
@@ -200,7 +198,7 @@ class CampoMinado:
 
         if not self.started:
             self.started = True
-            self.start_time = datetime.datetime.now()  # Inicialize o tempo de início aqui
+            self.start_time = datetime.datetime.now()
             self.update_time()
 
         if self.is_game_over or self.flags[row][col]:
@@ -240,11 +238,10 @@ def main():
         label2.grid(row=2, column=0, columnspan=3, padx=10, pady=10)
 
         def show_history():
-            # Implemente a lógica para exibir o histórico de jogos anteriores na mesma tela
+            # Implementar a lógica para exibir o histórico
             pass
 
         def show_tutorial():
-            # Crie uma nova janela para o tutorial
             tutorial_text = """
             Tutorial do Campo Minado:
 
@@ -258,7 +255,6 @@ def main():
 
             Boa sorte e divirta-se jogando!
             """
-        # Limpe a tela atual
             for widget in root.winfo_children():
                 widget.destroy()
 
@@ -266,7 +262,6 @@ def main():
                 root, text=tutorial_text, font=("Helvetica", 14), justify="left", padx=20, pady=20)
             tutorial_label.pack()
 
-            # Adicione um botão "Voltar" para retornar à tela de menu principal
             back_button = tk.Button(
                 root, text="Voltar ao Menu", command=show_difficulty_menu, pady=10)
             back_button.pack(side=tk.BOTTOM, pady=10)
@@ -287,16 +282,14 @@ def main():
         easy_button.grid(row=1, column=0, padx=10, pady=10)
         intermediate_button.grid(row=1, column=1, padx=10, pady=10)
         hard_button.grid(row=1, column=2, padx=10, pady=10)
-        # Adicione um botão de histórico
         history_button = tk.Button(
             frame, text='Histórico', command=show_history)
         history_button.grid(row=3, column=0, padx=10, pady=10)
 
-        # Adicione um botão de tutorial
         tutorial_button = tk.Button(
             frame, text='Tutorial', command=show_tutorial)
         tutorial_button.grid(row=3, column=1, padx=10, pady=10)
-        # Adicione um botão de tutorial
+
         close_game_button = tk.Button(
             frame, text='Sair do jogo', command=close_game)
         close_game_button.grid(row=3, column=2, padx=10, pady=10)
@@ -312,7 +305,6 @@ def main():
     show_difficulty_menu()
 
     root.mainloop()
-
 
 if __name__ == "__main__":
     main()
