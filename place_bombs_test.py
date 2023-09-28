@@ -16,3 +16,10 @@ def test_place_bombs_valid_positions():
         for col in range(len(field[row])):
             if field[row][col] == -1:
                 assert 0 <= row < len(field) and 0 <= col < len(field[row])
+                
+def test_place_bombs_empty_field():
+    field = []
+    bombs = 0
+    place_bombs_function(field, bombs)
+    assert field == []
+
