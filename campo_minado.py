@@ -1,6 +1,8 @@
 import tkinter as tk
 import random
 import datetime
+from functions.place_bombs import place_bombs_function
+from functions.calculate_numbers import calculate_numbers_function
 
 
 class CampoMinado:
@@ -26,7 +28,7 @@ class CampoMinado:
         self.victory_time = None
         self.create_widgets()
         self.place_bombs()
-        self.calculate_numbers()
+        calculate_numbers_function(self.field, self.rows, self.cols)
 
     def create_widgets(self):
         self.frame = tk.Frame(self.root)
@@ -68,13 +70,7 @@ class CampoMinado:
             row=self.rows + 1, columnspan=self.cols + 1, pady=8)
 
     def place_bombs(self):
-        bomb_count = 0
-        while bomb_count < self.bombs:
-            row = random.randint(0, self.rows - 1)
-            col = random.randint(0, self.cols - 1)
-            if self.field[row][col] == 0:
-                self.field[row][col] = -1
-                bomb_count += 1
+        place_bombs_function(self.field, self.bombs)
 
     def abandon_game(self):
         if not self.game_over:
@@ -165,19 +161,6 @@ class CampoMinado:
         self.reveal_all_bombs()
         self.pause_button_enabled = False
         self.show_defeat_popup()
-
-    def calculate_numbers(self):
-        for row in range(self.rows):
-            for col in range(self.cols):
-                if self.field[row][col] == -1:
-                    continue
-                bomb_count = 0
-                for dr in [-1, 0, 1]:
-                    for dc in [-1, 0, 1]:
-                        if 0 <= row + dr < self.rows and 0 <= col + dc < self.cols:
-                            if self.field[row + dr][col + dc] == -1:
-                                bomb_count += 1
-                self.field[row][col] = bomb_count
 
     def on_right_click(self, event, row, col):
         if self.game_over or self.paused:
@@ -305,6 +288,7 @@ def main():
     show_difficulty_menu()
 
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
