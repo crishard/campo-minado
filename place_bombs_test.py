@@ -30,3 +30,11 @@ def test_place_bombs_all_bombs():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == 9
+
+
+def test_place_bombs_no_bombs():
+    field = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    bombs = 0
+    place_bombs_function(field, bombs)
+    bomb_count = sum(row.count(-1) for row in field)
+    assert bomb_count == 0
