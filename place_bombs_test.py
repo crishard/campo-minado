@@ -7,3 +7,12 @@ def test_place_bombs_valid_counts():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == bombs
+
+def test_place_bombs_valid_positions():
+    field = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+    bombs = 5
+    place_bombs_function(field, bombs)
+    for row in range(len(field)):
+        for col in range(len(field[row])):
+            if field[row][col] == -1:
+                assert 0 <= row < len(field) and 0 <= col < len(field[row])
