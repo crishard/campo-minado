@@ -6,6 +6,7 @@ from functions.calculate_numbers import calculate_numbers_function
 from functions.show_victory_popup import show_victory_popup_function
 from functions.show_defeat_popup import show_defeat_popup_function
 from functions.reveal_all_bombs import reveal_all_bombs_function
+from functions.on_right_click import on_right_click_function
 
 
 class CampoMinado:
@@ -26,7 +27,7 @@ class CampoMinado:
         self.pause_start_time = None
         self.paused = False
         self.pause_button = None
-        self.bomb_count = 0
+        self.bomb_count = -2
         self.pause_label = None
         self.victory_time = None
         self.create_widgets()
@@ -130,17 +131,7 @@ class CampoMinado:
         self.show_defeat_popup()
 
     def on_right_click(self, event, row, col):
-        if self.game_over or self.paused:
-            return
-
-        if not self.flags[row][col] and self.bomb_count < self.bombs:
-            self.buttons[row][col].config(text='🏳')
-            self.flags[row][col] = True
-            self.bomb_count += 1
-        elif self.buttons[row][col]['text'] == '🏳':
-            self.buttons[row][col].config(text='')
-            self.flags[row][col] = False
-            self.bomb_count -= 1
+        self.bomb_count = on_right_click_function(event, self.game_over, self.paused, self.bombs, self.flags, self.buttons, row, col, self.bomb_count)
 
     def on_button_click(self, row, col):
         if self.game_over or self.is_game_over or self.flags[row][col] or self.paused:
