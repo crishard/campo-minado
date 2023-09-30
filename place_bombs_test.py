@@ -62,3 +62,13 @@ def test_place_bombs_negative_bombs():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == 0
+
+
+def test_place_bombs_valid_range():
+    field = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    bombs = 5
+    place_bombs_function(field, bombs)
+    for row in field:
+        for cell in row:
+            if cell == -1:
+                assert -1 <= cell <= 8
