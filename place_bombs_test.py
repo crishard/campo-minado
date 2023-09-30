@@ -119,3 +119,10 @@ def test_place_bombs_large_bombs():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == 9
+
+def test_place_bombs_max_bombs():
+    field = [[0] * 100 for _ in range(100)]
+    bombs = 10000
+    place_bombs_function(field, bombs)
+    bomb_count = sum(row.count(-1) for row in field)
+    assert bomb_count == 10000
