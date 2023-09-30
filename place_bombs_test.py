@@ -112,3 +112,10 @@ def test_place_bombs_large_field():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == bombs
+
+def test_place_bombs_large_bombs():
+    field = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    bombs = 100
+    place_bombs_function(field, bombs)
+    bomb_count = sum(row.count(-1) for row in field)
+    assert bomb_count == 9
