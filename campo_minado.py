@@ -3,6 +3,7 @@ import random
 import datetime
 from functions.place_bombs import place_bombs_function
 from functions.calculate_numbers import calculate_numbers_function
+from functions.show_victory_popup import show_victory_popup_function
 
 
 class CampoMinado:
@@ -123,25 +124,7 @@ class CampoMinado:
         ok_button.pack()
 
     def show_victory_popup(self):
-        if self.victory_time:
-
-            hours, remainder = divmod(self.victory_time.total_seconds(), 3600)
-            minutes, seconds = divmod(remainder, 60)
-            victory_message = f"Parabéns! Você venceu em {int(hours)} horas, {int(minutes)} minutos e {int(seconds)} segundos! 🎉🏆"
-
-            def return_to_menu():
-                for widget in self.root.winfo_children():
-                    widget.destroy()
-                self.show_difficulty_menu()
-
-            victory_popup = tk.Toplevel(self.root, padx=10, pady=10)
-            victory_popup.title("Vitória")
-            victory_label = tk.Label(
-                victory_popup, text=victory_message, padx=20, pady=20)
-            victory_label.pack()
-            ok_button = tk.Button(victory_popup, text="OK",
-                                  command=return_to_menu)
-            ok_button.pack()
+        show_victory_popup_function(self.victory_time, self.root, self.show_difficulty_menu)
 
     def check_game_over(self):
         if all(self.field[row][col] == -1 or self.flags[row][col] for row in range(self.rows) for col in range(self.cols)):

@@ -419,7 +419,7 @@ from functions.calculate_numbers import calculate_numbers_function
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
     ]),
 
-    # te 
+
     # # teste 06
     ([
         [0, -1, -1,  0,  0,  0, -1, -1,  0,  0,  0,  0,  0,  0,  0,  0,],
