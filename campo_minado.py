@@ -5,6 +5,7 @@ from functions.place_bombs import place_bombs_function
 from functions.calculate_numbers import calculate_numbers_function
 from functions.show_victory_popup import show_victory_popup_function
 from functions.show_defeat_popup import show_defeat_popup_function
+from functions.reveal_all_bombs import reveal_all_bombs_function
 
 
 class CampoMinado:
@@ -119,10 +120,7 @@ class CampoMinado:
             self.show_victory_popup()
 
     def reveal_all_bombs(self):
-        for row in range(self.rows):
-            for col in range(self.cols):
-                if self.field[row][col] == -1:
-                    self.buttons[row][col].config(text='💣')
+       reveal_all_bombs_function(self.rows, self.cols, self.field, self.buttons)
 
     def end_game(self):
         self.game_over = True
