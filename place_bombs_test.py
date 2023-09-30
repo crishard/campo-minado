@@ -73,7 +73,6 @@ def test_place_bombs_valid_range():
             if cell == -1:
                 assert -1 <= cell <= 8
 
-
 def test_place_bombs_invalid_field():
     field = None
     bombs = 5
@@ -81,3 +80,11 @@ def test_place_bombs_invalid_field():
         place_bombs_function(field, bombs)
     except Exception as e:
         assert str(e) == "Field cannot be None"
+
+def test_place_bombs_invalid_bombs():
+    field = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    bombs = "5"
+    try:
+        place_bombs_function(field, bombs)
+    except Exception as e:
+        assert str(e) == "Bombs must be an integer"
