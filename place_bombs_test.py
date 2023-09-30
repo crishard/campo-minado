@@ -88,3 +88,11 @@ def test_place_bombs_invalid_bombs():
         place_bombs_function(field, bombs)
     except Exception as e:
         assert str(e) == "Bombs must be an integer"
+
+def test_place_bombs_insufficient_space():
+    field = [[-1, -1], [-1, -1]]
+    bombs = 5
+    try:
+        place_bombs_function(field, bombs)
+    except Exception as e:
+        assert str(e) == "Not enough space for bombs"
