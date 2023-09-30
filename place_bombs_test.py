@@ -133,3 +133,11 @@ def test_place_bombs_random_bombs():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == bombs
+
+def test_place_bombs_invalid_cell_value():
+    field = [[0, 0, 'x'], [0, 0, 0], [0, 0, 0]]
+    bombs = 5
+    try:
+        place_bombs_function(field, bombs)
+    except Exception as e:
+        assert str(e) == "Invalid cell value in the field"
