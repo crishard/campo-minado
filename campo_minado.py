@@ -4,6 +4,7 @@ import datetime
 from functions.place_bombs import place_bombs_function
 from functions.calculate_numbers import calculate_numbers_function
 from functions.show_victory_popup import show_victory_popup_function
+from functions.show_defeat_popup import show_defeat_popup_function
 
 
 class CampoMinado:
@@ -106,22 +107,7 @@ class CampoMinado:
             self.root.after(1000, self.update_time)
 
     def show_defeat_popup(self):
-        defeat_popup = tk.Toplevel(self.root, padx=10, pady=10)
-        defeat_popup.title("Derrota")
-        defeat_message = "Você perdeu o jogo. Tente novamente!"
-        defeat_label = tk.Label(
-            defeat_popup, text=defeat_message, padx=20, pady=20)
-        defeat_label.pack()
-
-        def return_to_menu():
-            defeat_popup.destroy()
-            for widget in self.root.winfo_children():
-                widget.destroy()
-            self.show_difficulty_menu()
-
-        ok_button = tk.Button(
-            defeat_popup, text="Voltar ao menu", command=return_to_menu)
-        ok_button.pack()
+        show_defeat_popup_function(self.root, self.show_difficulty_menu)
 
     def show_victory_popup(self):
         show_victory_popup_function(self.victory_time, self.root, self.show_difficulty_menu)
