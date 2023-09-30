@@ -126,3 +126,10 @@ def test_place_bombs_max_bombs():
     place_bombs_function(field, bombs)
     bomb_count = sum(row.count(-1) for row in field)
     assert bomb_count == 10000
+
+def test_place_bombs_random_bombs():
+    field = [[0] * 10 for _ in range(10)]
+    bombs = 5
+    place_bombs_function(field, bombs)
+    bomb_count = sum(row.count(-1) for row in field)
+    assert bomb_count == bombs
