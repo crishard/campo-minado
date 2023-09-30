@@ -96,3 +96,12 @@ def test_place_bombs_insufficient_space():
         place_bombs_function(field, bombs)
     except Exception as e:
         assert str(e) == "Not enough space for bombs"
+
+def test_place_bombs_no_field():
+    field = []
+    bombs = 5
+    try:
+        place_bombs_function(field, bombs)
+    except ValueError as e:
+        assert str(e) == "Not enough space for bombs"
+    assert field == []
