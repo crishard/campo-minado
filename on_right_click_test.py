@@ -121,3 +121,15 @@ def test_on_right_click_function_unset_flag():
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
+
+# Testa se a função incrementa corretamente bomb_count quando a bandeira não está definida
+
+
+def test_on_right_click_function_increment_bomb_count():
+    flags[row][col] = False
+    buttons[row][col]['text'] = ''
+    result = on_right_click_function(
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+    assert result == bomb_count + 1
+    assert flags[row][col] is True
+    assert buttons[row][col]['text'] == '🏳'
