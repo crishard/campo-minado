@@ -133,3 +133,18 @@ def test_on_right_click_function_increment_bomb_count():
     assert result == bomb_count + 1
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
+
+# Testa se a função não altera o estado quando as coordenadas estão dentro dos limites válidos
+
+
+def test_on_right_click_function_valid_coordinates():
+    row = 3
+    col = 7
+    flags[row][col] = False
+    buttons[row][col]['text'] = ''
+    initial_bomb_count = bomb_count
+    result = on_right_click_function(
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+    assert result == initial_bomb_count
+    assert flags[row][col] is False
+    assert buttons[row][col]['text'] == ''
