@@ -11,13 +11,14 @@ buttons = [[tk.Button() for _ in range(10)] for _ in range(10)]
 row = 5
 col = 5
 bomb_count = -2
+started = True
 
 # Testa se a função retorna o valor de bomb_count quando o jogo está encerrado
 
 
 def test_on_right_click_function_game_over():
     result = on_right_click_function(
-        event, True, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, True, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
 
 # Testa se a função retorna o valor de bomb_count quando o jogo está pausado
@@ -25,7 +26,7 @@ def test_on_right_click_function_game_over():
 
 def test_on_right_click_function_paused():
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
 
 # Testa se a função incrementa bomb_count e configura a bandeira quando ela não está definida
@@ -35,7 +36,7 @@ def test_on_right_click_function_flag_not_set():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count + 1
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
@@ -47,7 +48,7 @@ def test_on_right_click_function_flag_set():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -62,7 +63,7 @@ def test_on_right_click_function_all_flags_set():
             buttons[i][j]['text'] = '🏳'
 
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
 
     assert result == bomb_count
     assert flags[row][col] is True
@@ -78,7 +79,7 @@ def test_on_right_click_function_invalid_coordinates():
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -91,7 +92,7 @@ def test_on_right_click_function_game_over_with_flag_set():
     buttons[row][col]['text'] = '🏳'
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, True, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, True, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
@@ -105,7 +106,7 @@ def test_on_right_click_function_max_bombs_reached():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -117,7 +118,7 @@ def test_on_right_click_function_unset_flag():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -129,7 +130,7 @@ def test_on_right_click_function_increment_bomb_count():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count + 1
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
@@ -144,7 +145,7 @@ def test_on_right_click_function_valid_coordinates():
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -157,7 +158,7 @@ def test_on_right_click_function_game_over_with_unset_flag():
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, True, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, True, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -170,7 +171,7 @@ def test_on_right_click_function_paused_with_unset_flag():
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -183,7 +184,7 @@ def test_on_right_click_function_paused_with_flag_set():
     buttons[row][col]['text'] = '🏳'
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
@@ -197,7 +198,7 @@ def test_on_right_click_function_increment_bomb_count_with_max_bombs():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -211,7 +212,7 @@ def test_on_right_click_function_remove_flag_with_max_bombs():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -224,7 +225,7 @@ def test_on_right_click_function_invalid_flag_set():
     buttons[row][col]['text'] = '🏳'
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
@@ -237,7 +238,7 @@ def test_on_right_click_function_game_over_with_invalid_flag_set():
     buttons[row][col]['text'] = '🚩'
     initial_bomb_count = bomb_count
     result = on_right_click_function(
-        event, True, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, True, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🚩'
@@ -249,7 +250,7 @@ def test_on_right_click_function_increment_bomb_count_with_invalid_flag():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     result = on_right_click_function(
-        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
