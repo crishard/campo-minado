@@ -215,3 +215,16 @@ def test_on_right_click_function_remove_flag_with_max_bombs():
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
+
+# Testa se a função remove a bandeira e decrementa bomb_count quando uma bandeira inválida está definida
+
+
+def test_on_right_click_function_invalid_flag_set():
+    flags[row][col] = True
+    buttons[row][col]['text'] = '🏳'
+    initial_bomb_count = bomb_count
+    result = on_right_click_function(
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+    assert result == initial_bomb_count - 1
+    assert flags[row][col] is False
+    assert buttons[row][col]['text'] == ''
