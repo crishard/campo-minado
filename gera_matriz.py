@@ -1,11 +1,11 @@
 import numpy as np
 
 def criar_matriz_aleatoria():
-    matriz = np.zeros((5, 5), dtype=int)
+    matriz = np.zeros((24, 24), dtype=int)
     bombas = 0
     
-    while bombas < 1:
-        x, y = np.random.randint(5, size=2) 
+    while bombas < 100:
+        x, y = np.random.randint(24, size=2) 
         if matriz[x, y] == 0:
             matriz[x, y] = -1  
             bombas += 1
