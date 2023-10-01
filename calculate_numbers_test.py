@@ -4,7 +4,7 @@ from functions.calculate_numbers import calculate_numbers_function
 
 @pytest.mark.parametrize("input_field, rows, cols, expected_field", [
 
-    # teste matriz 5x5- 8 numero minimo de bombas
+    # teste matriz 5x5 - numero minimo de bombas
     ([
         [0,  0,  0,  0,  0,],
         [0,  0,  0,  0,  0,],
