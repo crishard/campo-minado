@@ -1,4 +1,8 @@
-def on_right_click_function(event, game_over, paused, bombs, flags, buttons, row, col, bomb_count):
+def on_right_click_function(event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started):
+    if not started:
+        return bomb_count
+
+
     if game_over or paused:
         return bomb_count
 
