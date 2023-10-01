@@ -13,8 +13,17 @@ col = 5
 bomb_count = -2
 
 # Testa se a função retorna o valor de bomb_count quando o jogo está encerrado
+
+
 def test_on_right_click_function_game_over():
     result = on_right_click_function(
         event, True, paused, bombs, flags, buttons, row, col, bomb_count)
     assert result == bomb_count
 
+# Testa se a função retorna o valor de bomb_count quando o jogo está pausado
+
+
+def test_on_right_click_function_paused():
+    result = on_right_click_function(
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+    assert result == bomb_count
