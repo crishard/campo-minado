@@ -95,3 +95,17 @@ def test_on_right_click_function_game_over_with_flag_set():
     assert result == initial_bomb_count
     assert flags[row][col] is True
     assert buttons[row][col]['text'] == '🏳'
+
+# Testa se a função não permite configurar mais bandeiras quando o limite é atingido
+
+
+def test_on_right_click_function_max_bombs_reached():
+    bombs = 5
+    bomb_count = 5
+    flags[row][col] = False
+    buttons[row][col]['text'] = ''
+    result = on_right_click_function(
+        event, game_over, paused, bombs, flags, buttons, row, col, bomb_count)
+    assert result == bomb_count
+    assert flags[row][col] is False
+    assert buttons[row][col]['text'] == ''
