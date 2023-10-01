@@ -51,3 +51,19 @@ def test_on_right_click_function_flag_set():
     assert result == bomb_count - 1
     assert flags[row][col] is False
     assert buttons[row][col]['text'] == ''
+
+# Testa se a função não faz nada quando todas as bandeiras estão definidas
+
+
+def test_on_right_click_function_all_flags_set():
+    for i in range(len(flags)):
+        for j in range(len(flags[i])):
+            flags[i][j] = True
+            buttons[i][j]['text'] = '🏳'
+
+    result = on_right_click_function(
+        event, game_over, True, bombs, flags, buttons, row, col, bomb_count)
+
+    assert result == bomb_count
+    assert flags[row][col] is True
+    assert buttons[row][col]['text'] == '🏳'
