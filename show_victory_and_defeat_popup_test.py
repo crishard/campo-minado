@@ -108,3 +108,25 @@ def test_defeat_popup_creation():
 
     root.destroy()
 
+
+def test_ok_button_closes_popup():
+
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    show_defeat_popup_function(root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    defeat_popup = children[0]
+    assert isinstance(defeat_popup, tk.Toplevel)
+
+    ok_button = defeat_popup.children['!button']
+    ok_button.invoke()
+
+    assert len(root.winfo_children()) == 0
+
+    root.destroy()
+
