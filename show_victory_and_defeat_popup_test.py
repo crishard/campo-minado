@@ -172,3 +172,21 @@ def test_ok_button_click():
     assert len(root.winfo_children()) == 0
 
     root.destroy()
+
+
+def test_show_victory_popup_creation():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(seconds=3600)  # Pode ajustar o tempo da vitória conforme necessário
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    victory_popup = children[0]
+    assert isinstance(victory_popup, tk.Toplevel)
+    assert victory_popup.title() == "Vitória"
+
+    root.destroy()
