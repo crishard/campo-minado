@@ -257,3 +257,22 @@ def test_close_victory_popup():
     assert len(root.winfo_children()) == 0
 
     root.destroy()
+
+# Teste para verificar se o popup de derrota é exibido após uma derrota após alguns minutos de partida (você pode ajustar o tempo conforme necessário)
+
+def test_defeat_popup_display_after_defeat():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    defeat_time = timedelta(minutes=5)
+    show_defeat_popup_function(root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    defeat_popup = children[0]
+    assert isinstance(defeat_popup, tk.Toplevel)
+    assert defeat_popup.title() == "Derrota"
+
+    root.destroy()
