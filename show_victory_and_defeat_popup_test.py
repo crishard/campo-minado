@@ -235,4 +235,25 @@ def test_mouse_click_on_victory_popup():
     assert victory_popup.winfo_exists() == 0  
 
     root.destroy()
-oy()
+
+# Teste para verificar se o popup de vitória é fechado corretamente
+
+def test_close_victory_popup():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(seconds=3600) 
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    victory_popup = children[0]
+    assert isinstance(victory_popup, tk.Toplevel)
+
+    victory_popup.destroy()
+
+    assert len(root.winfo_children()) == 0
+
+    root.destroy()
