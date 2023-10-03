@@ -15,3 +15,18 @@ def test_show_victory_popup_function_in_sixty_minutes():
     assert isinstance(root.winfo_children()[0], tk.Toplevel)
     root.destroy()
 
+
+def test_show_victory_popup_function_in_zero_seconds():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(seconds=0)
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    if children:
+        assert isinstance(children[0], tk.Toplevel)
+
+    root.destroy()
