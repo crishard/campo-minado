@@ -79,3 +79,14 @@ def test_victory_in_23_hours_59_minutes_59_seconds():
     assert isinstance(root.winfo_children()[0], tk.Toplevel)
     root.destroy()
 
+
+def test_victory_in_100_hours_30_minutes_59_seconds():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(hours=100, minutes=30, seconds=59)
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+    assert isinstance(root.winfo_children()[0], tk.Toplevel)
+    root.destroy()
