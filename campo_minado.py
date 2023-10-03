@@ -1,5 +1,4 @@
 import tkinter as tk
-import random
 import datetime
 from functions.place_bombs import place_bombs_function
 from functions.calculate_numbers import calculate_numbers_function
@@ -78,22 +77,24 @@ class CampoMinado:
 
     def abandon_game(self):
         if not self.game_over:
+            self.root.destroy()
             self.show_difficulty_menu()
+
 
     def toggle_pause(self):
         if self.pause_button_enabled:
-
             if not self.game_over:
                 self.paused = not self.paused
                 if self.paused:
                     self.pause_button.config(text='Retomar')
                     self.pause_label.config(
                         text='Você precisa retomar o jogo para realizar alguma ação.')
-                    self.pause_start_time = datetime.datetime.now()
+                    if self.started and self.start_time is not None:
+                        self.pause_start_time = datetime.datetime.now()
                 else:
                     self.pause_button.config(text='Pausar')
                     self.pause_label.config(text='')
-                    if self.started:
+                    if self.started and self.pause_start_time is not None:
                         self.current_time = datetime.datetime.now()
                         self.start_time += self.current_time - self.pause_start_time
                         self.update_time()
@@ -131,7 +132,7 @@ class CampoMinado:
         self.show_defeat_popup()
 
     def on_right_click(self, event, row, col):
-        self.bomb_count = on_right_click_function(event, self.game_over, self.paused, self.bombs, self.flags, self.buttons, row, col, self.bomb_count)
+        self.bomb_count = on_right_click_function(event, self.game_over, self.paused, self.bombs, self.flags, self.buttons, row, col, self.bomb_count, self.started)
 
     def on_button_click(self, row, col):
         if self.game_over or self.is_game_over or self.flags[row][col] or self.paused:

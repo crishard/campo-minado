@@ -1,6 +1,6 @@
 import pytest
 from tkinter import Tk
-from campo_minado import CampoMinado  # Substitua 'minha_classe' pelo nome do arquivo onde está a classe CampoMinado
+from campo_minado import CampoMinado
 
 @pytest.fixture
 def campo_minado():
