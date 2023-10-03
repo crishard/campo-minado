@@ -90,3 +90,21 @@ def test_victory_in_100_hours_30_minutes_59_seconds():
     show_victory_popup_function(victory_time, root, show_difficulty_menu)
     assert isinstance(root.winfo_children()[0], tk.Toplevel)
     root.destroy()
+
+
+def test_defeat_popup_creation():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    show_defeat_popup_function(root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    defeat_popup = children[0]
+    assert isinstance(defeat_popup, tk.Toplevel)
+    assert defeat_popup.title() == "Derrota"
+
+    root.destroy()
+
