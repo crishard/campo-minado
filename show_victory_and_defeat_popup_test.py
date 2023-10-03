@@ -190,3 +190,24 @@ def test_show_victory_popup_creation():
     assert victory_popup.title() == "Vitória"
 
     root.destroy()
+
+def test_back_to_menu_button():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(seconds=3600)
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    victory_popup = children[0]
+    assert isinstance(victory_popup, tk.Toplevel)
+
+    back_to_menu_button = victory_popup.children['!button']
+    back_to_menu_button.invoke()
+
+    assert len(root.winfo_children()) == 0
+
+    root.destroy()
