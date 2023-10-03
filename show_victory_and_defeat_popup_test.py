@@ -211,3 +211,28 @@ def test_back_to_menu_button():
     assert len(root.winfo_children()) == 0
 
     root.destroy()
+
+# Teste para verificar se o clique do botão do mouse funciona no popup de vitória (você pode adicionar este teste se desejar)
+
+def test_mouse_click_on_victory_popup():
+    root = tk.Tk()
+
+    def show_difficulty_menu():
+        pass
+
+    victory_time = timedelta(seconds=3600) 
+    show_victory_popup_function(victory_time, root, show_difficulty_menu)
+
+    children = root.winfo_children()
+    assert len(children) == 1
+    victory_popup = children[0]
+    assert isinstance(victory_popup, tk.Toplevel)
+
+    ok_button = victory_popup.children['!button']
+    ok_button.invoke()
+
+
+    assert victory_popup.winfo_exists() == 0  
+
+    root.destroy()
+oy()
