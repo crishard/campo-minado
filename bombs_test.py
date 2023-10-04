@@ -103,3 +103,45 @@ def test_board_contains_only_bombs_hard(root):
 
     # Se todas as células foram verificadas e nenhuma falha ocorreu, o teste passou
     assert True
+
+
+def test_board_has_no_bombs_easy(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(8, 8, 0, root, show_difficulty_menu_function(root, show_game))
+
+    # Verifica se não há bombas em nenhuma célula do tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert False, f"Célula ({row}, {col}) contém uma bomba"
+
+    # Se todas as células foram verificadas e nenhuma falha ocorreu, o teste passou
+    assert True
+
+
+def test_board_has_no_bombs_mid(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(10, 16, 0, root, show_difficulty_menu_function(root, show_game))
+
+    # Verifica se não há bombas em nenhuma célula do tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert False, f"Célula ({row}, {col}) contém uma bomba"
+
+    # Se todas as células foram verificadas e nenhuma falha ocorreu, o teste passou
+    assert True
+
+
+def test_board_has_no_bombs_hard(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(24, 24, 0, root, show_difficulty_menu_function(root, show_game))
+
+    # Verifica se não há bombas em nenhuma célula do tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert False, f"Célula ({row}, {col}) contém uma bomba"
+
+    # Se todas as células foram verificadas e nenhuma falha ocorreu, o teste passou
+    assert True
