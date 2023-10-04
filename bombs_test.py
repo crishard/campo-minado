@@ -343,3 +343,57 @@ def test_valid_bomb_count_in_hard_game(root):
 
     # Se o número de bombas for um inteiro válido, o teste é bem-sucedido
     assert True
+
+
+def test_enough_spaces_for_bombs_in_easy_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    # Obtém o número de bombas e o tamanho do tabuleiro
+    bombs = game.bombs
+    total_cells = game.rows * game.cols
+
+    # Conta o número de espaços disponíveis (células sem bombas)
+    empty_cells = sum(1 for row in range(game.rows) for col in range(game.cols) if game.field[row][col] != -1)
+
+    # Verifica se existem espaços suficientes para as bombas
+    assert empty_cells >= bombs, f"Não há espaços suficientes no tabuleiro para as bombas ({empty_cells} < {bombs})"
+
+    # Se houver espaços suficientes, o teste é bem-sucedido
+    assert True
+
+
+def test_enough_spaces_for_bombs_in_mid_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    # Obtém o número de bombas e o tamanho do tabuleiro
+    bombs = game.bombs
+    total_cells = game.rows * game.cols
+
+    # Conta o número de espaços disponíveis (células sem bombas)
+    empty_cells = sum(1 for row in range(game.rows) for col in range(game.cols) if game.field[row][col] != -1)
+
+    # Verifica se existem espaços suficientes para as bombas
+    assert empty_cells >= bombs, f"Não há espaços suficientes no tabuleiro para as bombas ({empty_cells} < {bombs})"
+
+    # Se houver espaços suficientes, o teste é bem-sucedido
+    assert True
+
+
+def test_enough_spaces_for_bombs_in_hard_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    # Obtém o número de bombas e o tamanho do tabuleiro
+    bombs = game.bombs
+    total_cells = game.rows * game.cols
+
+    # Conta o número de espaços disponíveis (células sem bombas)
+    empty_cells = sum(1 for row in range(game.rows) for col in range(game.cols) if game.field[row][col] != -1)
+
+    # Verifica se existem espaços suficientes para as bombas
+    assert empty_cells >= bombs, f"Não há espaços suficientes no tabuleiro para as bombas ({empty_cells} < {bombs})"
+
+    # Se houver espaços suficientes, o teste é bem-sucedido
+    assert True
