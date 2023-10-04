@@ -270,3 +270,39 @@ def test_board_has_at_least_one_bomb_in_mid_game(root):
 
     # Se uma bomba foi encontrada, o teste é bem-sucedido
     assert True
+
+
+def test_negative_bomb_count_in_easy_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(8, 8, -1, root, show_difficulty_menu_function(root, show_game))
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é negativo
+    assert bombs < 0, f"O número de bombas ({bombs}) não é negativo"
+
+    # Se o número de bombas for negativo, o teste é bem-sucedido
+    assert True
+
+
+def test_negative_bomb_count_in_mid_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(10, 16, -1, root, show_difficulty_menu_function(root, show_game))
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é negativo
+    assert bombs < 0, f"O número de bombas ({bombs}) não é negativo"
+
+    # Se o número de bombas for negativo, o teste é bem-sucedido
+    assert True
+
+
+def test_negative_bomb_count_in_hard_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = start_game(24, 24, -1, root, show_difficulty_menu_function(root, show_game))
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é negativo
+    assert bombs < 0, f"O número de bombas ({bombs}) não é negativo"
+
+    # Se o número de bombas for negativo, o teste é bem-sucedido
+    assert True
