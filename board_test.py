@@ -50,6 +50,7 @@ def test_choose_difficulty_window(root):
 
     assert any(button.winfo_class() == 'Button' for button in buttons)
 
+#  Testa se as dimenssoes estao corretas
 def test_dimension_easy(root): 
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
@@ -69,11 +70,11 @@ def test_dimension_hard(root):
 
     assert game.rows and game.cols == 24
 
+# verifica se o tabuleiro inciou coberto
 def test_matriz_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    # Verifica se todas as células do tabuleiro estão cobertas
     for row in range(game.rows):
         for col in range(game.cols):
             button = game.buttons[row][col]
@@ -84,7 +85,6 @@ def test_matriz_mid(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Intermediário", show_difficulty_menu_function, root)
 
-    # Verifica se todas as células do tabuleiro estão cobertas
     for row in range(game.rows):
         for col in range(game.cols):
             button = game.buttons[row][col]
@@ -93,21 +93,19 @@ def test_matriz_hard(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Difícil", show_difficulty_menu_function, root)
 
-    # Verifica se todas as células do tabuleiro estão cobertas
     for row in range(game.rows):
         for col in range(game.cols):
             button = game.buttons[row][col]
             assert isinstance(button, tk.Button)
 
+# teste de jogada no tabuleiro
 def test_play_in_matriz_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que ainda não foi descoberta
     row_to_click = 0
     col_to_click = 0
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
     game_instance = game
     click = game_instance.on_button_click(row_to_click, col_to_click)
 
@@ -117,58 +115,52 @@ def test_play_outside_matrix_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que está fora da matriz (fora dos limites)
-    row_to_click = game.rows + 1  # Uma linha além dos limites da matriz
-    col_to_click = game.cols + 1  # Uma coluna além dos limites da matriz
+    row_to_click = game.rows + 1  
+    col_to_click = game.cols + 1  
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
     game_instance = game
 
     try:
         click = game_instance.on_button_click(row_to_click, col_to_click)
     except Exception as e:
-        assert str(e) == "list index out of range"  # Deve retornar None, indicando que está fora da matriz
+        assert str(e) == "list index out of range" 
 
 
 def test_play_in_matriz_mid(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Intermediário", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que ainda não foi descoberta
     row_to_click = 0
     col_to_click = 0
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
+
     game_instance = game
     click = game_instance.on_button_click(row_to_click, col_to_click)
 
     assert click is not False
 
+# testa jogada fora da matriz
 def test_play_outside_matrix_mid(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que está fora da matriz (fora dos limites)
-    row_to_click = game.rows + 1  # Uma linha além dos limites da matriz
-    col_to_click = game.cols + 1  # Uma coluna além dos limites da matriz
+    row_to_click = game.rows + 1
+    col_to_click = game.cols + 1
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
     game_instance = game
 
     try:
         click = game_instance.on_button_click(row_to_click, col_to_click)
     except Exception as e:
-        assert str(e) == "list index out of range"  # Deve retornar None, indicando que está fora da matriz
+        assert str(e) == "list index out of range" 
 
 def test_play_in_matriz_hard(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Difícil", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que ainda não foi descoberta
     row_to_click = 0
-    col_to_click = 0
+    col_to_click = 0 
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
     game_instance = game
     click = game_instance.on_button_click(row_to_click, col_to_click)
 
@@ -178,15 +170,51 @@ def test_play_outside_matrix_hard(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Difícil", show_difficulty_menu_function, root)
 
-    # Escolha uma célula que está fora da matriz (fora dos limites)
-    row_to_click = game.rows + 1  # Uma linha além dos limites da matriz
-    col_to_click = game.cols + 1  # Uma coluna além dos limites da matriz
+    row_to_click = game.rows + 1  
+    col_to_click = game.cols + 1 
 
-    # Crie uma instância do jogo e chame on_button_click nessa instância
     game_instance = game
 
     try:
         click = game_instance.on_button_click(row_to_click, col_to_click)
     except Exception as e:
-        assert str(e) == "list index out of range"  # Deve retornar None, indicando que está fora da matriz
+        assert str(e) == "list index out of range" 
 
+# testa se o tabuleiro nao e vazio
+def test_non_empty_board_easy(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+
+    rows = game.rows
+    cols = game.cols
+
+    assert rows > 0 and cols > 0, "O tabuleiro é de tamanho vazio"
+
+    assert True
+
+
+def test_non_empty_board_mid(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+
+    rows = game.rows
+    cols = game.cols
+
+    assert rows > 0 and cols > 0, "O tabuleiro é de tamanho vazio"
+
+    assert True
+
+
+def test_non_empty_board_hard(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+
+    rows = game.rows
+    cols = game.cols
+
+    assert rows > 0 and cols > 0, "O tabuleiro é de tamanho vazio"
+
+    assert True
