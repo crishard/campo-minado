@@ -1,6 +1,6 @@
 import subprocess
 import tkinter as tk
-from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game
+from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game, CampoMinado
 from functions.show_difficulty_menu import show_difficulty_menu_function
 import pytest
 
@@ -97,3 +97,33 @@ def test_matriz_hard(root):
         for col in range(game.cols):
             button = game.buttons[row][col]
             assert isinstance(button, tk.Button)
+
+def test_play_in_matriz_easy(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    # Escolha uma célula que ainda não foi descoberta
+    row_to_click = 0
+    col_to_click = 0
+
+    # Crie uma instância do jogo e chame on_button_click nessa instância
+    game_instance = game
+    click = game_instance.on_button_click(row_to_click, col_to_click)
+
+    assert click is not False
+
+def test_play_outside_matrix_easy(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    # Escolha uma célula que está fora da matriz (fora dos limites)
+    row_to_click = game.rows + 1  # Uma linha além dos limites da matriz
+    col_to_click = game.cols + 1  # Uma coluna além dos limites da matriz
+
+    # Crie uma instância do jogo e chame on_button_click nessa instância
+    game_instance = game
+
+    try:
+        click = game_instance.on_button_click(row_to_click, col_to_click)
+    except Exception as e:
+        assert str(e) == "list index out of range"  # Deve retornar None, indicando que está fora da matriz
