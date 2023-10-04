@@ -213,3 +213,60 @@ def test_bombs_are_valid_in_hard_board(root):
 
     # Se todas as verificações passaram, o teste é bem-sucedido
     assert True
+
+
+def test_board_has_at_least_one_bomb_in_hard_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    bomb_found = False  # Inicialmente, nenhuma bomba foi encontrada
+
+    # Verifica se há pelo menos uma bomba no tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                bomb_found = True
+                break  # Sai do loop assim que uma bomba for encontrada
+
+    # Verifica se uma bomba foi encontrada
+    assert bomb_found, "Nenhuma bomba foi encontrada no tabuleiro"
+
+    # Se uma bomba foi encontrada, o teste é bem-sucedido
+    assert True
+
+def test_board_has_at_least_one_bomb_in_easy_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    bomb_found = False  # Inicialmente, nenhuma bomba foi encontrada
+
+    # Verifica se há pelo menos uma bomba no tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                bomb_found = True
+                break  # Sai do loop assim que uma bomba for encontrada
+
+    # Verifica se uma bomba foi encontrada
+    assert bomb_found, "Nenhuma bomba foi encontrada no tabuleiro"
+
+    # Se uma bomba foi encontrada, o teste é bem-sucedido
+    assert True
+def test_board_has_at_least_one_bomb_in_mid_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    bomb_found = False  # Inicialmente, nenhuma bomba foi encontrada
+
+    # Verifica se há pelo menos uma bomba no tabuleiro
+    for row in range(game.rows):
+        for col in range(game.cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                bomb_found = True
+                break  # Sai do loop assim que uma bomba for encontrada
+
+    # Verifica se uma bomba foi encontrada
+    assert bomb_found, "Nenhuma bomba foi encontrada no tabuleiro"
+
+    # Se uma bomba foi encontrada, o teste é bem-sucedido
+    assert True
