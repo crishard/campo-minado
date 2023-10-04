@@ -48,3 +48,22 @@ def test_choose_difficulty_window(root):
     buttons = frame.winfo_children()
 
     assert any(button.winfo_class() == 'Button' for button in buttons)
+
+def test_dimension_easy(root): 
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    assert game.rows and game.cols == 8
+
+def test_dimension_mid(root): 
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    assert game.rows == 10 and game.cols == 16
+
+    
+def test_dimension_hard(root): 
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    assert game.rows and game.cols == 24
