@@ -4,6 +4,8 @@ from campo_minado import create_game_instance, show_difficulty_menu, show_game, 
 from functions.show_difficulty_menu import show_difficulty_menu_function
 import pytest
 
+from functions.place_bombs import place_bombs_function
+
 
 
 @pytest.fixture
@@ -144,4 +146,70 @@ def test_board_has_no_bombs_hard(root):
                 assert False, f"Célula ({row}, {col}) contém uma bomba"
 
     # Se todas as células foram verificadas e nenhuma falha ocorreu, o teste passou
+    assert True
+
+
+def test_bombs_are_valid_in_easy_board(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    # Defina as dimensões do tabuleiro fácil
+    rows = 8
+    cols = 8
+    bombs = 10
+
+    # Verifica se o número de bombas corresponde ao número esperado
+    assert bombs == game.bombs, f"O número de bombas ({game.bombs}) não corresponde ao esperado ({bombs})"
+
+    # Verifica se as coordenadas das bombas estão dentro dos limites do tabuleiro
+    for row in range(rows):
+        for col in range(cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert 0 <= row < rows and 0 <= col < cols, f"Célula ({row}, {col}) contém uma bomba fora dos limites"
+
+    # Se todas as verificações passaram, o teste é bem-sucedido
+    assert True
+
+
+def test_bombs_are_valid_in_mid_board(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    # Defina as dimensões do tabuleiro fácil
+    rows = 10
+    cols = 16
+    bombs = 30
+
+    # Verifica se o número de bombas corresponde ao número esperado
+    assert bombs == game.bombs, f"O número de bombas ({game.bombs}) não corresponde ao esperado ({bombs})"
+
+    # Verifica se as coordenadas das bombas estão dentro dos limites do tabuleiro
+    for row in range(rows):
+        for col in range(cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert 0 <= row < rows and 0 <= col < cols, f"Célula ({row}, {col}) contém uma bomba fora dos limites"
+
+    # Se todas as verificações passaram, o teste é bem-sucedido
+    assert True
+
+
+def test_bombs_are_valid_in_hard_board(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    # Defina as dimensões do tabuleiro fácil
+    rows = 24
+    cols = 24
+    bombs = 100
+
+    # Verifica se o número de bombas corresponde ao número esperado
+    assert bombs == game.bombs, f"O número de bombas ({game.bombs}) não corresponde ao esperado ({bombs})"
+
+    # Verifica se as coordenadas das bombas estão dentro dos limites do tabuleiro
+    for row in range(rows):
+        for col in range(cols):
+            if game.field[row][col] == -1:  # Se a célula contém uma bomba
+                assert 0 <= row < rows and 0 <= col < cols, f"Célula ({row}, {col}) contém uma bomba fora dos limites"
+
+    # Se todas as verificações passaram, o teste é bem-sucedido
     assert True
