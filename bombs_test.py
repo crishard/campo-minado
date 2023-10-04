@@ -278,7 +278,7 @@ def test_negative_bomb_count_in_easy_game(root):
     bombs = game.bombs
 
     # Verifica se o número de bombas é negativo
-    assert bombs < 0, f"O número de bombas ({bombs}) não é negativo"
+    assert bombs < 0, f"O número de bombas ({bombs}) é negativo"
 
     # Se o número de bombas for negativo, o teste é bem-sucedido
     assert True
@@ -305,4 +305,41 @@ def test_negative_bomb_count_in_hard_game(root):
     assert bombs < 0, f"O número de bombas ({bombs}) não é negativo"
 
     # Se o número de bombas for negativo, o teste é bem-sucedido
+    assert True
+
+
+def test_valid_bomb_count_in_easy_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é um inteiro válido
+    assert isinstance(bombs, int), f"O número de bombas ({bombs}) não é um inteiro válido"
+
+    # Se o número de bombas for um inteiro válido, o teste é bem-sucedido
+    assert True
+
+def test_valid_bomb_count_in_mid_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é um inteiro válido
+    assert isinstance(bombs, int), f"O número de bombas ({bombs}) não é um inteiro válido"
+
+    # Se o número de bombas for um inteiro válido, o teste é bem-sucedido
+    assert True
+
+def test_valid_bomb_count_in_hard_game(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    bombs = game.bombs
+
+    # Verifica se o número de bombas é um inteiro válido
+    assert isinstance(bombs, int), f"O número de bombas ({bombs}) não é um inteiro válido"
+
+    # Se o número de bombas for um inteiro válido, o teste é bem-sucedido
     assert True
