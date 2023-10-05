@@ -112,7 +112,8 @@ class CampoMinado:
             and self.field[row][col] == 0
         ):
             self.flags[row][col] = True
-            self.buttons[row][col].config(state=tk.DISABLED, bg=self.revealed_cell_color)
+            self.buttons[row][col].config(
+                state=tk.DISABLED, bg=self.revealed_cell_color)
 
             for i in range(-1, 2):
                 for j in range(-1, 2):
@@ -132,7 +133,8 @@ class CampoMinado:
         ):
             self.flags[row][col] = True
             bomb_count = self.field[row][col]
-            self.buttons[row][col].config(text=str(bomb_count), bg=self.revealed_cell_color)
+            self.buttons[row][col].config(
+                text=str(bomb_count), bg=self.revealed_cell_color)
 
             if bomb_count == 0:
                 for i in range(-1, 2):
@@ -144,7 +146,6 @@ class CampoMinado:
                             and 0 <= new_col < self.cols
                         ):
                             self.reveal_cell(new_row, new_col)
-    
 
     def show_intro_screen(self):
         intro_window = tk.Toplevel(self.root)
@@ -162,36 +163,40 @@ class CampoMinado:
             intro_window, text=f"Tabuleiro do Campo Minado: {self.rows} x {self.cols}")
         board_label.pack()
 
-        # Feche a tela de introdução após 10 segundos
         intro_window.after(5000, intro_window.destroy)
 
         return True
+
 
 def start_game(rows, cols, bombs, root, show_difficulty_menu):
     for widget in root.winfo_children():
         widget.destroy()
 
     game = CampoMinado(root, rows, cols, bombs, show_difficulty_menu)
-    
+
     return game
 
 
 def show_game(difficulty, show_difficulty_menu, root):
-    game = None  # Inicializa a variável game
+    game = None
     if difficulty == "Fácil":
-        game = start_game(8, 8, 10, root, show_difficulty_menu_function(root, show_game))
+        game = start_game(
+            8, 8, 10, root, show_difficulty_menu_function(root, show_game))
         game.show_intro_screen()
-        game.current_difficulty = "Fácil" 
+        game.current_difficulty = "Fácil"
     elif difficulty == "Intermediário":
-        game = start_game(10, 16, 30, root, show_difficulty_menu_function(root, show_game))
+        game = start_game(10, 16, 30, root,
+                          show_difficulty_menu_function(root, show_game))
         game.show_intro_screen()
-        game.current_difficulty = "Intermediário"  # Define o nível atual
+        game.current_difficulty = "Intermediário"
     elif difficulty == "Difícil":
-        game = start_game(24, 24, 100, root, show_difficulty_menu_function(root, show_game))
+        game = start_game(24, 24, 100, root,
+                          show_difficulty_menu_function(root, show_game))
         game.show_intro_screen()
-        game.current_difficulty = "Difícil"  # Define o nível atual
+        game.current_difficulty = "Difícil"
 
     return game
+
 
 def show_difficulty_menu(root):
     show_difficulty_menu_function(root, show_game)
@@ -204,6 +209,8 @@ def main():
     show_difficulty_menu(root)
 
     root.mainloop()
+
+# Instancia do jogo para testes
 
 
 def create_game_instance(root, rows, cols, bombs):
