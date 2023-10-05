@@ -1,7 +1,7 @@
 import tkinter as tk
+from functions.show_difficulty_menu import show_difficulty_menu_function
 
-
-def show_victory_popup_function(victory_time, root, show_difficulty_menu):
+def show_victory_popup_function(victory_time, root, show_game):
     if victory_time:
 
         hours, remainder = divmod(victory_time.total_seconds(), 3600)
@@ -11,7 +11,7 @@ def show_victory_popup_function(victory_time, root, show_difficulty_menu):
         def return_to_menu():
             for widget in root.winfo_children():
                 widget.destroy()
-            show_difficulty_menu()
+            show_difficulty_menu_function(root, show_game)
 
         victory_popup = tk.Toplevel(root, padx=10, pady=10)
         victory_popup.title("Vitória")
