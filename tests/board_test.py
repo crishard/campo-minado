@@ -259,3 +259,23 @@ def test_show_tutorial_called(mock_show_tutorial_function, root):
     # Verifique se a função show_tutorial_function foi chamada com os argumentos corretos
     mock_show_tutorial_function.assert_called_once_with(root, show_difficulty_menu_function, show_game)
 
+# Testa se o botão de tutorial esta funcionando corretamente
+@patch("functions.show_difficulty_menu.show_difficulty_menu_function")
+def test_back_to_menu_button(mock_show_difficulty_menu_function, root):
+    show_tutorial_function(root, mock_show_difficulty_menu_function, show_game)
+
+    # Encontre o widget do botão "Voltar ao Menu"
+    back_button = None
+    for widget in root.winfo_children():
+        if isinstance(widget, tk.Button) and widget.cget("text") == "Voltar ao Menu":
+            back_button = widget
+            break
+
+    # Verifique se o widget do botão foi encontrado
+    assert back_button is not None, "Widget do botão 'Voltar ao Menu' não foi encontrado."
+
+    # Chame a função associada ao botão "Voltar ao Menu" (simulando um clique)
+    back_button.invoke()
+
+    # Verifique se a função show_difficulty_menu_function foi chamada corretamente
+    mock_show_difficulty_menu_function.assert_called_once_with(root, show_game)
