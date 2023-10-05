@@ -185,7 +185,7 @@
     + Testar se é possível abandonar a partida pausada
     + Testar se é possível abandonar a partida depois de um longo tempo de jogo
 
-<!-- Testes antigos, vao ser refatorados ou excluídos -->
+### Testes antigos, vao ser refatorados ou excluídos
 + O software deve verificar se o jogador perdeu a partida após cada ação.
 + O software deve atualizar a interface do jogo para refletir o resultado da ação do jogador.
 + O software deve registrar o tempo decorrido desde o início da partida.
