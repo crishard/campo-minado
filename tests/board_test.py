@@ -218,3 +218,19 @@ def test_non_empty_board_hard(root):
     assert rows > 0 and cols > 0, "O tabuleiro é de tamanho vazio"
 
     assert True
+
+
+
+# Testa se a introducao esta sendo exibida corretamente
+from functions.show_tutorial import show_tutorial_function
+from unittest.mock import patch
+
+
+@patch("campo_minado.CampoMinado.show_intro_screen", return_value=True)
+def test_show_intro_screen(mock_show_intro_screen, root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+    verify = game.show_intro_screen()
+
+    assert verify == True
+
