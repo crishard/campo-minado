@@ -234,3 +234,28 @@ def test_show_intro_screen(mock_show_intro_screen, root):
 
     assert verify == True
 
+
+
+# Testa se o tutorial esta sendo exibido corretamente
+@patch("functions.show_difficulty_menu.show_tutorial_function")
+def test_show_tutorial_called(mock_show_tutorial_function, root):
+    show_difficulty_menu_function(root, show_game)
+
+    # Encontre o widget "frame"
+    frame = None
+    for widget in root.winfo_children():
+        if isinstance(widget, tk.Frame):
+            frame = widget
+            break
+
+    # Verifique se o widget "frame" foi encontrado
+    assert frame is not None, "Widget 'frame' não foi encontrado."
+
+    # Chame a função que deve acionar o tutorial
+    for widget in frame.winfo_children():
+        if widget.cget("text") == "Tutorial":
+            widget.invoke()
+
+    # Verifique se a função show_tutorial_function foi chamada com os argumentos corretos
+    mock_show_tutorial_function.assert_called_once_with(root, show_difficulty_menu_function, show_game)
+
