@@ -14,7 +14,7 @@
     + Testar se a posição de jogada está dentro do tabuleiro. ✔️
     + Testar se pode colocar uma bandeira ✔️
 
-3. O jogo deve ter um tabuleiro de jogo com dimensões 10x16 para intermediário 
+3. O jogo deve ter um tabuleiro de jogo com dimensões 10x16 para intermediário
     + Testar se o jogo em “Intermediário” tem 10x16. ✔️
     + Testar se o tabuleiro está vazio no início ✔️
     + Testar se é possível marcar no tabuleiro ✔️
@@ -115,12 +115,12 @@
     + Testar se o usuário está sendo informado que a partida está pausada
 
 18. Deve haver um botão de pausa visível durante o jogo.
-    + Testar se o botão de pausa está sendo criado corretamente
-    + Testar se o botão de retomar a partida está sendo criado corretamente
+    + Testar se o botão de pausa está sendo criado corretamente ✔️
+    + Testar se o botão de retomar a partida está sendo criado corretamente ✔️
 19. Deve haver uma opção de tutorial para ensinar as regras básicas do jogo aos novos jogadores.
-    + Testar se a janela o botão de tutorial está sendo criado corretamente
-    + Testar se a janela de tutorial está sendo criada corretamente
-    + Testar se é possível voltar ao menu após abrir a janela de tutorial
+    + Testar se a janela o botão de tutorial está sendo criado corretamente ✔️
+    + Testar se a janela de tutorial está sendo criada corretamente ✔️
+    + Testar se é possível voltar ao menu após abrir a janela de tutorial ✔️
 
 20. O software deve exibir o número de bandeiras disponíveis para uso.
     + Verificar se o software informa o número de bandeiras disponíveis antes de iniciar a partida
@@ -163,29 +163,30 @@
     + Testar se a partida e inciada se o time for iniciado manualmente
 
 26. Deve haver um botão de pausa (Retomar) visível durante a partida
-    + Testa se o botão pause esta sendo criado corretamente
-    + Testar se o botão começa como pause
-    + Testa se o jogo está sendo pausado corretamente
-    + Testa se o botão pausar altera pra retomar corretamente
-    + Testa se a mensagem de ações da partida só pode ser realizadas com ela em andamento é criada corretamente
-    + Testa se após o termino da partida o botão de pausa é desabilitado
-    + Testa se a mensagem de jogo terminado aparece corretamente
-    + Testar se o comportamento do botão persiste inalterado após vários clicks
-    + Testa o comportamento do botão após im longo período de tempo
-    + Testar se o jogo inicia sem o botão de pausa
-    + Testa a retomada do time correto apos varias pausas
-    + Testar se a pausa e retomar nao alteram o tempo antes do inicio da partida
-    + Testar se o pausa e retomar nao afeta o tempo depois que o jogo terminou
-    + Testar se o pause/retomar afeta o tempo se ele foi começado manualmente
+    + Testa se o botão pause esta sendo criado corretamente ✔️
+    + Testar se o botão começa como pause ✔️
+    + Testa se o jogo está sendo pausado corretamente ✔️
+    + Testa se o botão pausar altera pra retomar corretamente ✔️
+    + Testa se a mensagem de ações da partida só pode ser realizadas com ela em andamento é criada corretamente ✔️
+    + Testa se após o termino da partida o botão de pausa é desabilitado ✔️
+    + Testa se a mensagem de jogo terminado aparece corretamente ✔️
+    + Testar se o comportamento do botão persiste inalterado após vários clicks ✔️
+    + Testa o comportamento do botão após im longo período de tempo ✔️
+    + Testar se o jogo inicia sem o botão de pausa ✔️
+    + Testa a retomada do time correto apos varias pausas ✔️
+    + Testar se a pausa e retomar nao alteram o tempo antes do inicio da partida ✔️
+    + Testar se o pausa e retomar nao afeta o tempo depois que o jogo terminou ✔️
+    + Testar se o pause/retomar afeta o tempo se ele foi começado manualmente ✔️
 
 27. Deve ser possível abandonar a partida a qualquer momento
-    + Testar se o botão de abandonar a partida está sendo criado corretamente
-    + Testar se é possível abandonar a partida
-    + Testar se é possível abandonar a partida antes de iniciá-la
-    + Testar se é possível abandonar a partida pausada
-    + Testar se é possível abandonar a partida depois de um longo tempo de jogo
+    + Testar se o botão de abandonar a partida está sendo criado corretamente ✔️
+    + Testar se é possível abandonar a partida ✔️
+    + Testar se é possível abandonar a partida antes de iniciá-la ✔️
+    + Testar se é possível abandonar a partida pausada ✔️
+    + Testar se é possível abandonar a partida depois de um longo tempo de jogo ✔️
 
 ### Testes antigos, vao ser refatorados ou excluídos
+
 + O software deve verificar se o jogador perdeu a partida após cada ação.
 + O software deve atualizar a interface do jogo para refletir o resultado da ação do jogador.
 + O software deve registrar o tempo decorrido desde o início da partida.
