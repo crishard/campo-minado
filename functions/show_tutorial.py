@@ -15,7 +15,15 @@ def show_tutorial_function(root, show_difficulty_menu_function, show_game):
     2. Cada campo aberto mostrará um número, indicando quantas bombas estão adjacentes a ele.
     3. Use a lógica para determinar onde as bombas estão e evite clicar nelas.
     4. Use botões direito para marcar campos suspeitos com bandeiras.
-    5. Marque todas as bombas para vencer o jogo.
+    5. Descubra todas as áreas sem bombas para vencer a partida.
+    6. Use o botão esquerdo do mouse para revelar e o botão direito para adicionar e remover bandeiras.
+    6. Os níveis são divididos da seguinte forma: 
+
+        Fácil: 8 linhas e 8 colunas com 10 bombas
+
+        Intermediário: 10 linhas e 16 colunas com 30 bombas
+        
+        Difícil: 24 linhas e 24 colunas com 100 bombas
 
     Boa sorte e divirta-se jogando!
     """
