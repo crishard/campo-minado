@@ -7,14 +7,9 @@ import pytest
 from functions.place_bombs import place_bombs_function
 
 
-
 @pytest.fixture
 def root():
     return tk.Tk()
-
-
-
-
 
 
 def test_on_click_is_bomb(root):
@@ -24,7 +19,7 @@ def test_on_click_is_bomb(root):
 
     for row in range(zone_row, zone_row + 3):
         for col in range(zone_col, zone_col + 3):
-            game.field[row][col] = -1 
+            game.field[row][col] = -1
 
     game.on_button_click(zone_row, zone_col)
 
@@ -36,10 +31,17 @@ def test_on_click_has_adjacent_bombs(root):
     # Defina um cenário onde a célula (1, 1) tem bombas adjacentes
     zone_row = 1
     zone_col = 1
-    game = show_game("Fácil", show_difficulty_menu_function, root)
+    board = [
+        [0, -1, 0, 0],
+        [0, 0, 0, -1],
+        [-1, 0, -1, 0],
+        [0, 0, 0, 0]
+    ]
 
-    game.field[zone_row - 1][zone_col - 1] = -1
-    game.field[zone_row - 1][zone_col] = -1
+    zone_row = 2
+    zone_col = 2
+    game = create_game_instance(root, 4, 4, 4)
+    game.field = board
 
     game.on_button_click(zone_row, zone_col)
 
@@ -47,3 +49,25 @@ def test_on_click_has_adjacent_bombs(root):
     expected_text = str(8)  # Número de bombas adjacentes
     assert button_text == "💣", f"A célula clicada não exibe o texto correto. Esperado: {expected_text}, Obtido: {button_text}"
 
+
+def test_on_click_no_adjacent_bombs(root):
+    # Tabuleiro 4x4 com bombas posicionadas manualmente
+    board = [
+        [0, -1, 0, 0],
+        [0, 0, 0, -1],
+        [-1, 0, -1, 0],
+        [0, 0, 0, 0]
+    ]
+
+    zone_row = 1
+    zone_col = 1
+    game = create_game_instance(root, 4, 4, 4)
+    game.field = board  # Substitua o campo do jogo pelo tabuleiro manual
+
+    # Execute a função on_button_click para a célula
+    game.on_button_click(zone_row, zone_col)
+
+    button_text = game.buttons[zone_row][zone_col]["text"]
+    expected_text = "0"  # Sem bombas adjacentes, o texto deve estar vazio
+
+    assert button_text == expected_text, f"A célula clicada não exibe o texto correto. Esperado: {expected_text}, Obtido: {button_text}"
