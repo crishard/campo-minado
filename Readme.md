@@ -101,10 +101,10 @@
     + Testar se o jogador é informado que a zona selecionada já está descoberta
 
 16. O jogo deve revelar o número de bombas adjacentes a uma zona quando ela for descoberta.
-    + verificar se a zona clicada contém bomba.
-    + Testar se existe uma bomba adjacente a a zona clicada
-    + Testar se não existe bomba adjacente a zona clicada
-    + Testar se o cálculo de adjacência está correto
+    + verificar se a zona clicada contém bomba. ✔️
+    + Testar se existe uma bomba adjacente a a zona clicada ✔️
+    + Testar se não existe bomba adjacente a zona clicada ✔️
+    + Testar se o cálculo de adjacência está correto ✔️
 
 17. O software deve mostrar o tempo decorrido durante a partida.
     + Testar se é possível pausar a partida
