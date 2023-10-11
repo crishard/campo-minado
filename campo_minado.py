@@ -122,6 +122,7 @@ class CampoMinado:
                     if (
                         0 <= new_row < self.rows
                         and 0 <= new_col < self.cols
+                        and (new_row != row or new_col != col)
                     ):
                         self.reveal_cell(new_row, new_col)
 
