@@ -36,7 +36,7 @@ class CampoMinado:
         self.bomb_label = None
         self.paused = False
         self.pause_button = None
-        self.bomb_count = -2
+        self.bomb_count = 0
         self.pause_label = None
         self.current_difficulty = ""
         self.victory_time = None
