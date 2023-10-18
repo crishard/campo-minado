@@ -67,8 +67,8 @@
     + Testar se as bombas são distribuídas de forma aleatória  ✔️
 
 9. Todas as zonas do tabuleiro devem começar cobertas e sem bandeira.
-    + Verificar se as zonas estão todas cobertas
-    + Verificar se nenhuma zona tem bandeira
+    + Verificar se as zonas estão todas cobertas ✔️
+    + Verificar se nenhuma zona tem bandeira ✔️
 
 10. O jogador deve ser capaz de marcar uma zona com uma bandeira para indicar que ele considera ter uma bomba.
     + estar se é possível adicionar uma bandeira ✔️
@@ -93,20 +93,17 @@
     + Testar se o tutorial está sendo exibido corretamente  ✔️
     + Testar se o botão de voltar para o menu funciona corretamente ✔️
 
-14. Não deve ser possível descobrir uma zona que tenha uma bandeira. O jogador deve ser notificado se tentar fazê-lo.
-    + Testar se o jogador é informado em caso de descobrir uma zona que tenha bandeira
-    + Testar se ao tentar descobrir uma zona com bandeira, o tabuleiro permanece inalterado
+14. Não deve ser possível descobrir uma zona que tenha uma bandeira.
+    + Testar se o jogador é informado em caso de descobrir uma zona que tenha bandeira ✔️
+    + Testar se ao tentar descobrir uma zona com bandeira, o tabuleiro permanece inalterado ✔️
 
-15. Não deve ser possível colocar uma bandeira em uma zona que já foi descoberta. O jogador deve ser notificado se tentar fazê-lo.
-    + Testar se o jogador é informado que a zona selecionada já está descoberta
-
-16. O jogo deve revelar o número de bombas adjacentes a uma zona quando ela for descoberta.
+15. O jogo deve revelar o número de bombas adjacentes a uma zona quando ela for descoberta.
     + verificar se a zona clicada contém bomba. ✔️
     + Testar se existe uma bomba adjacente a a zona clicada ✔️
     + Testar se não existe bomba adjacente a zona clicada ✔️
     + Testar se o cálculo de adjacência está correto ✔️
 
-17. O software deve mostrar o tempo decorrido durante a partida.
+16. O software deve mostrar o tempo decorrido durante a partida.
     + Testar se é possível pausar a partida ✔️
     + Testar se é possível retomar a partida ✔️
     + Testar se é possível descobrir uma zona com a partida pausada ✔️
@@ -114,39 +111,39 @@
     + Testar se é possível remover uma bandeira com a partida pausada ✔️
     + Testar se o usuário está sendo informado que a partida está pausada ✔️
 
-18. Deve haver um botão de pausa visível durante o jogo.
+17. Deve haver um botão de pausa visível durante o jogo.
     + Testar se o botão de pausa está sendo criado corretamente ✔️
     + Testar se o botão de retomar a partida está sendo criado corretamente ✔️
-19. Deve haver uma opção de tutorial para ensinar as regras básicas do jogo aos novos jogadores.
+18. Deve haver uma opção de tutorial para ensinar as regras básicas do jogo aos novos jogadores.
     + Testar se a janela o botão de tutorial está sendo criado corretamente ✔️
     + Testar se a janela de tutorial está sendo criada corretamente ✔️
     + Testar se é possível voltar ao menu após abrir a janela de tutorial ✔️
 
-20. O software deve exibir o número de bandeiras disponíveis para uso.
-    + Verificar se o software informa o número de bandeiras disponíveis antes de iniciar a partida
+19. O software deve exibir o número de bandeiras disponíveis para uso.
+    + Verificar se o software informa o número de bandeiras disponíveis antes de iniciar a partida ✔️
     + Testar se o software atualiza o número de bandeiras disponíveis quando uma bandeira é adicionada
     + Testar se o software atualiza o número de bandeiras disponíveis quando uma bandeira é removida
     + Verificar se o software informa em tempo real o número de bandeiras disponíveis
 
-21. O jogador deve ser notificado imediatamente se descobrir uma zona que contenha uma bomba, indicando que a bomba explodiu, e que ele perdeu a partida.
+20. O jogador deve ser notificado imediatamente se descobrir uma zona que contenha uma bomba, indicando que a bomba explodiu, e que ele perdeu a partida.
     + Testar se o jogador descobriu uma zona com bomba ✔️
     + Testar se o popup de derrota está sendo criado corretamente ✔️
     + Testar se a partida está encerrada após descobrir uma zona com bomba  ✔️
     + Testar se é possível voltar ao menu a partir do popup de derrota ✔️
     + Testar se é possível jogar novamente após uma derrota
-22. O software deve fornecer uma mensagem de vitória quando todas as áreas sem bombas forem descobertas corretamente.
-    + verificar se existe alguma bomba descoberta
-    + verificar se existe alguma zona sem bomba coberta
-    + verificar se a mensagem de vitória está sendo exibida corretamente
-    + verificar se o usuário retorna ao menu inicial após a mensagem de vitória
-    + Testar se é possível jogar novamente após essa vitória
-    + Testar se a partida foi salva no histórico após a partida
+21. O software deve fornecer uma mensagem de vitória quando todas as áreas sem bombas forem descobertas corretamente.
+    + verificar se existe alguma bomba descoberta  ✔️
+    + verificar se existe alguma zona sem bomba coberta  ✔️
+    + verificar se a mensagem de vitória está sendo exibida corretamente  ✔️
+    + verificar se o usuário retorna ao menu inicial após a mensagem de vitória  ✔️
+    + Testar se é possível jogar novamente após essa vitória  ✔️
+    + Testar se a partida foi salva no histórico após a partida ✔️
 
-23. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
+22. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
     + Testar se o número de bombas da partida foi exibido antes de começar a partida ✔️
     + Testar se o número de bombas está sendo exibido em tempo real
 
-24. O software deve verificar se o jogador venceu a partida após cada ação.
+23. O software deve verificar se o jogador venceu a partida após cada ação.
     + Verifica se o jogo é encerrado quando uma bomba é clicada ✔️
     + Verifica se o jogo continua quando um local seguro é clicado ✔️
     + Verifica se o jogo não é afetado quando um local marcado com bandeira é clicado ✔️
@@ -155,7 +152,7 @@
     + verificar se todas as zonas que não contém bomba estão descobertas ✔️
     + Verificar se o jogador vence ao revelar todas as zonas ✔️
 
-25. O software deve fornecer um time com o tempo de jogo
+24. O software deve fornecer um time com o tempo de jogo
     + Verifique se o tempo é atualizado corretamente quando o jogo está em andamento ✔️
     + Verifique se o tempo não é atualizado quando o jogo está pausado ✔️
     + Verifique se o tempo não é atualizado quando o jogo está encerrado ✔️
@@ -165,7 +162,7 @@
     + Verifique se o time é marcado como encerrado e as bombas são reveladas corretamente ✔️
     + Testar se a partida e inciada se o time for iniciado manualmente ✔️
 
-26. Deve haver um botão de pausa (Retomar) visível durante a partida
+25. Deve haver um botão de pausa (Retomar) visível durante a partida
     + Testa se o botão pause esta sendo criado corretamente ✔️
     + Testar se o botão começa como pause ✔️
     + Testa se o jogo está sendo pausado corretamente ✔️
@@ -181,7 +178,7 @@
     + Testar se o pausa e retomar nao afeta o tempo depois que o jogo terminou ✔️
     + Testar se o pause/retomar afeta o tempo se ele foi começado manualmente ✔️
 
-27. Deve ser possível abandonar a partida a qualquer momento
+26. Deve ser possível abandonar a partida a qualquer momento
     + Testar se o botão de abandonar a partida está sendo criado corretamente ✔️
     + Testar se é possível abandonar a partida ✔️
     + Testar se é possível abandonar a partida antes de iniciá-la ✔️
