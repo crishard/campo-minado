@@ -182,3 +182,9 @@
     + Testar se é possível abandonar a partida antes de iniciá-la ✔️
     + Testar se é possível abandonar a partida pausada ✔️
     + Testar se é possível abandonar a partida depois de um longo tempo de jogo ✔️
+
+26. Deve ser possível revelar células adjacentes a uma célula que nao é adjacente a nenhum bomba.
+    + Testar quando o valor da célula é igual a 0 ✔️
+    + Testar quando a célula é uma bomba ✔️
+    + Testar quando a célula contém bombas adjacentes ✔️
+    + Testar quando todas as células adjacentes são bombas ✔️
