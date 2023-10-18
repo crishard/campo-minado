@@ -4,8 +4,6 @@ from campo_minado import create_game_instance, show_difficulty_menu, show_game, 
 from functions.show_difficulty_menu import show_difficulty_menu_function
 import pytest
 
-from functions.place_bombs import place_bombs_function
-
 
 @pytest.fixture
 def root():

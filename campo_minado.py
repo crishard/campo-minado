@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import tkinter as tk
 import datetime
 from functions.place_bombs import place_bombs_function
