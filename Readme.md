@@ -65,6 +65,7 @@
 8. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
     + Testar se o tabuleiro é gerado  ✔️
     + Testar se as bombas são distribuídas de forma aleatória  ✔️
+    + Testar se o número de bombas está sendo exibido em tempo real
 
 9. Todas as zonas do tabuleiro devem começar cobertas e sem bandeira.
     + Verificar se as zonas estão todas cobertas ✔️
@@ -131,6 +132,7 @@
     + Testar se a partida está encerrada após descobrir uma zona com bomba  ✔️
     + Testar se é possível voltar ao menu a partir do popup de derrota ✔️
     + Testar se é possível jogar novamente após uma derrota
+
 21. O software deve fornecer uma mensagem de vitória quando todas as áreas sem bombas forem descobertas corretamente.
     + verificar se existe alguma bomba descoberta  ✔️
     + verificar se existe alguma zona sem bomba coberta  ✔️
@@ -139,11 +141,7 @@
     + Testar se é possível jogar novamente após essa vitória  ✔️
     + Testar se a partida foi salva no histórico após a partida ✔️
 
-22. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
-    + Testar se o número de bombas da partida foi exibido antes de começar a partida ✔️
-    + Testar se o número de bombas está sendo exibido em tempo real
-
-23. O software deve verificar se o jogador venceu a partida após cada ação.
+22. O software deve verificar se o jogador venceu a partida após cada ação.
     + Verifica se o jogo é encerrado quando uma bomba é clicada ✔️
     + Verifica se o jogo continua quando um local seguro é clicado ✔️
     + Verifica se o jogo não é afetado quando um local marcado com bandeira é clicado ✔️
@@ -152,7 +150,7 @@
     + verificar se todas as zonas que não contém bomba estão descobertas ✔️
     + Verificar se o jogador vence ao revelar todas as zonas ✔️
 
-24. O software deve fornecer um time com o tempo de jogo
+23. O software deve fornecer um time com o tempo de jogo
     + Verifique se o tempo é atualizado corretamente quando o jogo está em andamento ✔️
     + Verifique se o tempo não é atualizado quando o jogo está pausado ✔️
     + Verifique se o tempo não é atualizado quando o jogo está encerrado ✔️
@@ -162,7 +160,7 @@
     + Verifique se o time é marcado como encerrado e as bombas são reveladas corretamente ✔️
     + Testar se a partida e inciada se o time for iniciado manualmente ✔️
 
-25. Deve haver um botão de pausa (Retomar) visível durante a partida
+24. Deve haver um botão de pausa (Retomar) visível durante a partida
     + Testa se o botão pause esta sendo criado corretamente ✔️
     + Testar se o botão começa como pause ✔️
     + Testa se o jogo está sendo pausado corretamente ✔️
@@ -178,7 +176,7 @@
     + Testar se o pausa e retomar nao afeta o tempo depois que o jogo terminou ✔️
     + Testar se o pause/retomar afeta o tempo se ele foi começado manualmente ✔️
 
-26. Deve ser possível abandonar a partida a qualquer momento
+25. Deve ser possível abandonar a partida a qualquer momento
     + Testar se o botão de abandonar a partida está sendo criado corretamente ✔️
     + Testar se é possível abandonar a partida ✔️
     + Testar se é possível abandonar a partida antes de iniciá-la ✔️
