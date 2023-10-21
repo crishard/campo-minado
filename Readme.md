@@ -2,63 +2,85 @@
 
 ## Requisitos
 
-1. O software deve permitir que o jogador inicie um novo jogo escolhendo o nível de dificuldade.
+1. O software deve exibir um menu com todas as opções do jogo ao jogador e deve permitir que o jogador inicie um novo jogo escolhendo o nível de dificuldade.
     + Testar se ele pode escolher o nível fácil. ✔️
     + Testar se ele pode escolher o nível intermediário. ✔️
     + Testar se ele pode escolher o nível difícil. ✔️
+    + Testar se ele pode visualizar o tutorial
+    + Testar se ele pode visualizar o histórico
+    + Testar se ele pode fechar o jogo a partir desse menu
 
 2. O jogo deve ter um tabuleiro de jogo com dimensões 8x8 para o nível fácil
-    + Testar se o jogo em “Fácil” tem 8x8. ✔️
-    + Testar se o tabuleiro está vazio no início. ✔️
-    + Testar se é possível marcar no tabuleiro. ✔️
-    + Testar se a posição de jogada está dentro do tabuleiro. ✔️
-    + Testar se pode colocar uma bandeira ✔️
+    + Testar se o jogo em "Fácil" tem 8 linhas
+    + Testar se o jogo em “Fácil” tem 8 colunas.
+    + Testar se o tabuleiro está vazio no início.
+    + Testar se é possível marcar no tabuleiro.
+    + Testar se a posição de jogada está dentro do tabuleiro.
+    + Testar se pode colocar uma bandeira
+    + Testar se o jogo inicia exibindo o time da partida
+    + testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 3. O jogo deve ter um tabuleiro de jogo com dimensões 10x16 para intermediário
-    + Testar se o jogo em “Intermediário” tem 10x16. ✔️
+    + Testar se o jogo em “Intermediário” tem 10 linhas.
+    + Testar se o jogo em “Intermediário” tem 16 colunas.
     + Testar se o tabuleiro está vazio no início ✔️
     + Testar se é possível marcar no tabuleiro ✔️
     + Testar se a posição de jogada está dentro do tabuleiro ✔️
+    + Testar se o jogo inicia exibindo o time da partida
+    + testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 4. O jogo deve ter um tabuleiro de jogo com dimensões 24x24 para difícil.
-    + Testar se o jogo em “Difícil” tem 24x24 ✔️
+    + Testar se o jogo em “Difícil” tem 24 linhas ✔️
+    + Testar se o jogo em “Difícil” tem 24 colunas ✔️
     + Testar se o tabuleiro está vazio no início ✔️
     + Testar se é possível marcar no tabuleiro ✔️
     + Testar se a posição de jogada está dentro do tabuleiro ✔️
+    + Testar se o jogo inicia exibindo o time da partida
+    + testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 5. O número de bombas no tabuleiro deve ser fixo 10 bombas para fácil.
     + Testar se o número de bombas do tabuleiro é maior que 10 ✔️
     + Testar se o número de bombas do tabuleiro é menor que 10 ✔️
+    + Testar se o número de bombas é igual a 10
     + Testar se o tabuleiro só contém bombas ✔️
     + Testar se o tabuleiro não contém bombas ✔️
     + Testar se as bombas estão posicionadas em locais válidos ✔️
     + Testar se existe alguma bomba no tabuleiro ✔️
     + Testar se o número de bombas é negativo ✔️
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar) ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido) ✔️
     + Testar se existem espaços suficientes para as bombas ✔️
     + Testar se o tabuleiro é de tamanho vazio ✔️
 
 6. O número de bombas no tabuleiro deve ser fixo30 bombas para intermediário.
     + Testar se o número de bombas do tabuleiro é maior que 30 ✔️
     + Testar se o número de bombas do tabuleiro é menor que 30 ✔️
+    + Testar se o número de bombas é igual a 30
     + Testar se o tabuleiro só contém bombas ✔️
     + Testar se o tabuleiro não contém bombas ✔️
     + Testar se as bombas estão posicionadas em locais válidos ✔️
     + Testar se existe alguma bomba no tabuleiro ✔️
     + Testar se o número de bombas é negativo ✔️
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar) ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido) ✔️
     + Testar se existem espaços suficientes para as bombas ✔️
     + Testar se o tabuleiro é de tamanho vazio ✔️
+
 
 7. O número de bombas no tabuleiro deve ser fixo 100 bombas para difícil.
     + Testar se o número de bombas do tabuleiro é maior que 100 ✔️
     + Testar se o número de bombas do tabuleiro é menor que 100 ✔️
+    + Testar se o número de bombas é igual a 100
     + Testar se o tabuleiro só contém bombas ✔️
     + Testar se o tabuleiro não contém bombas ✔️
     + Testar se as bombas estão posicionadas em locais válidos ✔️
     + Testar se existe alguma bomba no tabuleiro ✔️
     + Testar se o número de bombas é negativo ✔️
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar) ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido) ✔️
     + Testar se existem espaços suficientes para as bombas ✔️
     + Testar se o tabuleiro é de tamanho vazio ✔️
 
@@ -70,12 +92,15 @@
 9. Todas as zonas do tabuleiro devem começar cobertas e sem bandeira.
     + Verificar se as zonas estão todas cobertas ✔️
     + Verificar se nenhuma zona tem bandeira ✔️
+    + Testar se as zonas estão descobertas
 
 10. O jogador deve ser capaz de marcar uma zona com uma bandeira para indicar que ele considera ter uma bomba.
-    + estar se é possível adicionar uma bandeira ✔️
+    + Testar se é possível adicionar uma bandeira ✔️
     + Testar se a zona está coberta ✔️
     + Testar se a zona está descoberta ✔️
     + Testar se a posição clicada está dentro do tabuleiro ✔️
+    + Testar se a bandeira foi adicionada corretamente
+    + Testar se o número de bandeiras disponíveis foi atualizado
 
 11. O jogador deve ser capaz de remover uma bandeira previamente colocada em uma zona.
     + verificar se a zona que ele clicou é uma zona com bandeira ✔️
@@ -91,6 +116,7 @@
     + Testar se a zona foi descoberta após o click ✔️
 
 13. O usuário deve conseguir acessar um tutorial do jogo
+    + Testar se o botão de tutorial está visível para o jogador
     + Testar se o tutorial está sendo exibido corretamente  ✔️
     + Testar se o botão de voltar para o menu funciona corretamente ✔️
 
@@ -99,22 +125,33 @@
     + Testar se ao tentar descobrir uma zona com bandeira, o tabuleiro permanece inalterado ✔️
 
 15. O jogo deve revelar o número de bombas adjacentes a uma zona quando ela for descoberta.
+    + Testar se a zona clicada possuí bandeira
     + verificar se a zona clicada contém bomba. ✔️
     + Testar se existe uma bomba adjacente a a zona clicada ✔️
     + Testar se não existe bomba adjacente a zona clicada ✔️
-    + Testar se o cálculo de adjacência está correto ✔️
 
 16. O software deve mostrar o tempo decorrido durante a partida.
+    + Testar se o time do jogo esta sendo exibido corretamente
+    + Testar se o time do jogo está sendo atualizado corretamente
+
+17. Deve haver um botão de pausa visível durante o jogo.
+    + Testar se o botão de pausa está sendo criado corretamente ✔️
+    + Testar se o botão de retomar a partida está sendo criado corretamente ✔️
     + Testar se é possível pausar a partida ✔️
     + Testar se é possível retomar a partida ✔️
     + Testar se é possível descobrir uma zona com a partida pausada ✔️
     + Testar se é possível adicionar uma bandeira com a partida pausada ✔️
     + Testar se é possível remover uma bandeira com a partida pausada ✔️
     + Testar se o usuário está sendo informado que a partida está pausada ✔️
+    + Testar a performance do botão de pausa durante o jogo
 
-17. Deve haver um botão de pausa visível durante o jogo.
-    + Testar se o botão de pausa está sendo criado corretamente ✔️
-    + Testar se o botão de retomar a partida está sendo criado corretamente ✔️
+        - Testar se o botão de pausa funciona corretamente após diversos clicks em pausa e retomar
+        - testar se o botão de pausa funciona corretamente após o jogo permanecer em andamento durante um longo período de tempo
+        - Testar se o botão de retomar funciona corretamente após o jogo permanecer pausado após um longo período de tempo
+    + Testar se a label do botão de pausa e retomar é atualizado corretamente após divisas ações de pausar e retomar
+    + Testar se a informação de partida pausada é informada ao usuário quando a partida está pausada
+    + Testar se a informação de partida pausa é removida corretamente quando o jogador retoma a partida
+
 18. Deve haver uma opção de tutorial para ensinar as regras básicas do jogo aos novos jogadores.
     + Testar se a janela o botão de tutorial está sendo criado corretamente ✔️
     + Testar se a janela de tutorial está sendo criada corretamente ✔️
