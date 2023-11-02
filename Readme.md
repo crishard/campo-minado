@@ -2,9 +2,9 @@
 
 ### Tópicos 
 
-- [Apresentando o jogo](#descrição-do-projeto)
+- [Apresentando o jogo](#apresentando-o-jogo)
 
-- [Como Jogar?](#como-jogar)
+- [Como Jogar?](#como-jogar?)
 
 - [Aplicação](#aplicação)
 
@@ -16,7 +16,7 @@
 
 - [Desenvolvedores](#desenvolvedores)
 
-## Apresentado o jogo
+## Apresentando o jogo
 
 <p align="justify">
 O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos Especiais II (COnteúdo da disciplina - Testes de Software)
@@ -36,7 +36,7 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 </p>
 
-# :hammer: Como jogar?
+## Como jogar?
 
 - `Funcionalidade 1`: O botão esquerdo do mouse serve para revelar células
 - `Funcionalidade 2`: O botão direito do mouse serve para adicionar e remover bandeiras
