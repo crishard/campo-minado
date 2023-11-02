@@ -42,5 +42,5 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 ## Como rodar o Projeto?
 
 ### Clone o repositório
-```sh 
-git clone https://github.com/crishard/campo_minado.git
+
+```sh git clone https://github.com/crishard/campo_minado.git´´´

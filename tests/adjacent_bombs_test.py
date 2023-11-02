@@ -1,4 +1,3 @@
-import subprocess
 import tkinter as tk
 from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game, CampoMinado
 from functions.show_difficulty_menu import show_difficulty_menu_function
