@@ -1,6 +1,6 @@
-<h1 align="center"> Campo minado </h1>
+# Campo minado
 
-### Tópicos 
+## Tópicos
 
 - [Apresentando o jogo](#apresentando-o-jogo)
 
@@ -22,15 +22,18 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 ![Tela de menu.](./images/menu.png)
 
 ### Jogo fácil
+
 ![Tela do jogo nom modo fácil.](./images/facil.png)
 
 ### Jogo intermediário
+
 ![Tela do jogo nom modo fácil.](./images/intermediario.png)
 
 ### Jogo Difícil
 ![Tela do jogo nom modo fácil.](./images/dificil.png)
 
 ### Tutorial
+
 ![Tela do jogo nom modo fácil.](./images/tutorial.png)
 
 </p>
