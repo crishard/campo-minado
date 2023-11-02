@@ -4,17 +4,10 @@
 
 - [Apresentando o jogo](#apresentando-o-jogo)
 
-- [Como Jogar?](#como-jogar?)
+- [Como eu consigo Jogar?](#como-jogar)
 
-- [Aplicação](#aplicação)
+- [Como rodar o projeto?](#como-rodar-o-projeto)
 
-- [Ferramentas utilizadas](#ferramentas-utilizadas)
-
-- [Acesso ao projeto](#acesso-ao-projeto)
-
-- [Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
-
-- [Desenvolvedores](#desenvolvedores)
 
 ## Apresentando o jogo
 
@@ -25,20 +18,29 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 ![Tela de menu.](./menu.png)
 
-## Jogo fácil
+### Jogo fácil
 ![Tela do jogo nom modo fácil.](./facil.png)
 
-## Jogo intermediário
+### Jogo intermediário
 ![Tela do jogo nom modo fácil.](./intermediario.png)
 
-## Jogo Difícil
+### Jogo Difícil
 ![Tela do jogo nom modo fácil.](./dificil.png)
+
+### Tutorial
+![Tela do jogo nom modo fácil.](./tutorial.png)
 
 </p>
 
-## Como jogar?
+## Como Jogar
 
 - `Funcionalidade 1`: O botão esquerdo do mouse serve para revelar células
 - `Funcionalidade 2`: O botão direito do mouse serve para adicionar e remover bandeiras
 - `Funcionalidade 3`: Antes de iniciar a partida, as informações de nível, número de bombas e bandeiras é apresentada
 - `Funcionalidade 4`: Após acabar a partida, retorne ao menu para jogar novamente
+
+## Como rodar o Projeto?
+
+### Clone o repositório
+
+> git clone https://github.com/crishard/campo_minado.git
