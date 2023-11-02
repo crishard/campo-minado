@@ -1,5 +1,1 @@
-tklinter
 pytest
-datetime
-random
-unittest

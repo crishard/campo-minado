@@ -43,5 +43,24 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 ### Clone o repositório
 
-```sh 
-git clone https://github.com/crishard/campo_minado.git´´´
+```sh
+git clone https://github.com/crishard/campo_minado.git
+```
+
+### Entre na raiz do projeto 
+
+```sh
+cd campo-minado
+```
+
+### Instale todas as dependências
+
+```sh
+pip3 install -r requirements.txt
+```
+
+### Execute o jogo já compilado
+
+```sh
+./dist/campo_minado
+```
