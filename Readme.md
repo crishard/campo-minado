@@ -1,29 +1,44 @@
 <h1 align="center"> Campo minado </h1>
 
-# Índice 
+### Tópicos 
 
-* [Apresentação do jogo](#imagens-do-jogo)
-* [Índice](#índice)
-* [Descrição do Projeto](#descrição-do-projeto)
-* [Status do Projeto](#status-do-Projeto)
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
-* [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Licença](#licença)
-* [Conclusão](#conclusão)
-:construction: Projeto em construção :construction:
+- [Apresentando o jogo](#descrição-do-projeto)
 
-! [Descrição do Projeto](#imagens-do-jogo)
+- [Como Jogar?](#como-jogar)
 
-<p align="center">
-<img loading="lazy" src="./menu.png"/>
+- [Aplicação](#aplicação)
+
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
+
+- [Acesso ao projeto](#acesso-ao-projeto)
+
+- [Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
+
+- [Desenvolvedores](#desenvolvedores)
+
+## Apresentado o jogo
+
+<p align="justify">
+O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos Especiais II (COnteúdo da disciplina - Testes de Software)
+
+### Tela de menu
+
+![Tela de menu.](./menu.png)
+
+## Jogo fácil
+![Tela do jogo nom modo fácil.](./facil.png)
+
+## Jogo intermediário
+![Tela do jogo nom modo fácil.](./intermediario.png)
+
+## Jogo Difícil
+![Tela do jogo nom modo fácil.](./dificil.png)
+
 </p>
 
-# :hammer: Funcionalidades do projeto
+# :hammer: Como jogar?
 
-- `Funcionalidade 1`: descrição da funcionalidade 1
-- `Funcionalidade 2`: descrição da funcionalidade 2
-- `Funcionalidade 2a`: descrição da funcionalidade 2a relacionada à funcionalidade 2
-- `Funcionalidade 3`: descrição da funcionalidade 
+- `Funcionalidade 1`: O botão esquerdo do mouse serve para revelar células
+- `Funcionalidade 2`: O botão direito do mouse serve para adicionar e remover bandeiras
+- `Funcionalidade 3`: Antes de iniciar a partida, as informações de nível, número de bombas e bandeiras é apresentada
+- `Funcionalidade 4`: Após acabar a partida, retorne ao menu para jogar novamente
