@@ -8,6 +8,9 @@
 
 - [Como rodar o projeto?](#como-rodar-o-projeto)
 
+- [Como consigo executar  os testes?](#como-executar-os-testes)
+
+- [Requisitos e casos de testes](./requisitos)
 
 ## Apresentando o jogo
 
@@ -16,19 +19,19 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 ### Tela de menu
 
-![Tela de menu.](./menu.png)
+![Tela de menu.](./images/menu.png)
 
 ### Jogo fácil
-![Tela do jogo nom modo fácil.](./facil.png)
+![Tela do jogo nom modo fácil.](./images/facil.png)
 
 ### Jogo intermediário
-![Tela do jogo nom modo fácil.](./intermediario.png)
+![Tela do jogo nom modo fácil.](./images/intermediario.png)
 
 ### Jogo Difícil
-![Tela do jogo nom modo fácil.](./dificil.png)
+![Tela do jogo nom modo fácil.](./images/dificil.png)
 
 ### Tutorial
-![Tela do jogo nom modo fácil.](./tutorial.png)
+![Tela do jogo nom modo fácil.](./images/tutorial.png)
 
 </p>
 
@@ -62,5 +65,13 @@ pip3 install -r requirements.txt
 ### Execute o jogo já compilado
 
 ```sh
-./dist/campo_minado
+python3 campo_minado.py
+```
+
+## Como executar os testes?
+
+### Dentro do diretório do projeto (caminho/campo-minado) execute
+
+```sh
+python3 -m pytest ./tests
 ```

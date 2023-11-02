@@ -1,3 +1,5 @@
 /dist
 /build
 /campo_minado.spec
+__pycache__/
+/.pytest_cache
