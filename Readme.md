@@ -2,7 +2,8 @@
 
 :construction: Projeto em construção :construction:
 
-[Descrição do Projeto](# )
+[Descrição do Projeto](#Trabalho desenvolvido para a disciplina de Tópicos especiais II - abaixo as imagens do jogo em execução)
+
 <p align="center">
 <img loading="lazy" src="./menu.png"/>
 </p>
