@@ -10,7 +10,7 @@
 
 - [Como consigo executar  os testes?](#como-executar-os-testes)
 
-- [Requisitos e casos de testes](./requisitos)
+- [Requisitos e casos de testes](./requisitos/requisitos.md)
 
 ## Apresentando o jogo
 
