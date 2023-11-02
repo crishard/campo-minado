@@ -43,4 +43,7 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 ### Clone o repositório
 
-> git clone https://github.com/crishard/campo_minado.git
+´´´sh
+
+git clone https://github.com/crishard/campo_minado.git
+´´´
