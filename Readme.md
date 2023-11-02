@@ -32,7 +32,7 @@ O projeto foi desenvolvido como um trabalho avaliativo da disciplina de Tópicos
 
 </p>
 
-## Como Jogar
+## :hammer: Como Jogar
 
 - `Funcionalidade 1`: O botão esquerdo do mouse serve para revelar células
 - `Funcionalidade 2`: O botão direito do mouse serve para adicionar e remover bandeiras
