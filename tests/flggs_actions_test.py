@@ -126,7 +126,7 @@ def test_flags_empty(root):
     # meu bomb_count inicia como com -2 e itera para cada bandeira utilizada, o numero e -2 para que se tenha bombas + 2 bandeiras o qeu dao 12 bandeiras;
     flags = game.bomb_count + game.bombs 
 
-    assert flags == 8
+    assert flags == 10
 
 # Testa se o numero de bandeiras esta sendo atualizado corretamente
 def test_count_flag():

@@ -21,12 +21,10 @@ def test_on_click_is_bomb(root):
 
     game.on_button_click(zone_row, zone_col)
 
-    # Verifique se o jogo termina (derrota) após o clique na zona
-    assert game.game_over is True, "O jogo não terminou após o clique na zona com uma bomba."
+    assert game.game_over is True
 
 
 def test_on_click_has_adjacent_bombs(root):
-    # Defina um cenário onde a célula (1, 1) tem bombas adjacentes
     zone_row = 1
     zone_col = 1
     board = [
