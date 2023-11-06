@@ -7,31 +7,31 @@
     + Testar se o botão de nível difícil está sendo criado. ✔️
 
 2. O jogo deve contar com mais opções em seu menu inicial
-    + Testar se o menu de opções está sendo criado corretamente
-    + Testar se ele pode escolher visualizar o tutorial
-    + Testar se ele pode escolher visualizar o histórico
-    + Testar se ele pode escolher fechar o jogo a partir desse menu
+    + Testar se o menu de opções está sendo criado corretamente ✔️
+    + Testar se ele pode escolher visualizar o tutorial ✔️
+    + Testar se ele pode escolher visualizar o histórico ✔️
+    + Testar se ele pode escolher fechar o jogo a partir desse menu ✔️
 
 3. Deve ser possível selecionar o nível fácil
-    + Testar se o botão fácil está visível
-    + Testar se é possível clicar no botão fácil
-    + Testar se o comportamento do botão está correto
-    + Testar se a tela de menu foi limpa
-    + Testar se o a tela de jogo foi criada
+    + Testar se o botão fácil está visível ✔️
+    + Testar se é possível clicar no botão fácil ✔️
+    + Testar se o comportamento do botão está correto ✔️
+    + Testar se a tela de menu foi limpa ✔️
+    + Testar se o a tela de jogo foi criada ✔️
 
 4. Deve ser possível selecionar o nível intermediário
-    + Testar se o botão intermediário está visível
-    + Testar se é possível clicar no botão intermediário
-    + Testar se o comportamento do botão está correto
-    + Testar se a tela de menu foi limpa
-    + Testar se o a tela de jogo foi criada
+    + Testar se o botão intermediário está visível ✔️
+    + Testar se é possível clicar no botão intermediário ✔️
+    + Testar se o comportamento do botão está correto ✔️
+    + Testar se a tela de menu foi limpa ✔️
+    + Testar se o a tela de jogo foi criada ✔️
 
 5. Deve ser possível selecionar o nível difícil
-    + Testar se o botão difícil está visível
-    + Testar se é possível clicar no botão difícil
-    + Testar se o comportamento do botão está correto
-    + Testar se a tela de menu foi limpa
-    + Testar se o a tela de jogo foi criada
+    + Testar se o botão difícil está visível ✔️
+    + Testar se é possível clicar no botão difícil ✔️
+    + Testar se o comportamento do botão está correto ✔️
+    + Testar se a tela de menu foi limpa ✔️
+    + Testar se o a tela de jogo foi criada ✔️
 
 6. O jogo deve ter um tabuleiro de jogo com dimensões 8x8 para o nível fácil
     + Testar se o jogo em "Fácil" tem 8 linhas

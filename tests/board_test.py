@@ -12,8 +12,6 @@ def root():
     return tk.Tk()
 
 # Testa se o nível fácil é criado corretamente
-
-
 def test_start_game_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
@@ -21,8 +19,6 @@ def test_start_game_easy(root):
     assert current_difficulty == "Fácil"
 
 # Testa se o nível intermediário é selecionado corretamente
-
-
 def test_start_game_intermediate(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Intermediário", show_difficulty_menu_function, root)
