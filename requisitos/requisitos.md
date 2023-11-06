@@ -117,14 +117,14 @@
     + Testar se as bombas estão sendo organizadas de forma aleatória ✔️
 
 13. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
-    + Testar se o tabuleiro é gerado
-    + Testar se existem bombas no tabuleiro
-    + Testar se o número de bombas do nível fácil está correto
-    + Testar se o número de bombas do nível intermediário está correto
-    + Testar se o número de bombas do nível difícil está correto
-    + Testar se o popup com a informação está sendo criado corretamente
-    + Testar se a informação está visível para o usuário
-    + Testar se as bombas são distribuídas de forma aleatória
+    + Testar se o tabuleiro é gerado ✔️
+    + Testar se existem bombas no tabuleiro ✔️
+    + Testar se o número de bombas do nível fácil está correto ✔️
+    + Testar se o número de bombas do nível intermediário está correto ✔️
+    + Testar se o número de bombas do nível difícil está correto ✔️
+    + Testar se o popup com a informação está sendo criado corretamente ✔️
+    + Testar se a informação está visível para o usuário ✔️
+    + Testar se as bombas são distribuídas de forma aleatória ✔️
 
 14. Todas as zonas do tabuleiro devem começar cobertas e sem bandeira.
     + Testar se o tabuleiro está sendo criado

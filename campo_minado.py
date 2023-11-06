@@ -39,6 +39,7 @@ class CampoMinado:
         self.flag_label = None
         self.bomb_label = None
         self.paused = False
+        self.used_flags = 0
         self.pause_button = None
         self.bomb_count = 0
         self.pause_label = None
@@ -67,6 +68,11 @@ class CampoMinado:
 
     def update_time(self):
         update_time_function(self)
+    
+    def update_flag_label(self):
+        flags_left = self.bombs - self.used_flags
+        flag_emoji = "🚩"
+        self.flag_label.config(text=f"Bandeiras para uso: {flags_left}")
 
     def show_defeat_popup(self):
         show_defeat_popup_function(self.root, show_game)
@@ -139,7 +145,7 @@ class CampoMinado:
 
 
     def on_right_click(self, event, row, col):
-        self.bomb_count = on_right_click_function(
+        self.bomb_count = on_right_click_function(self,
             event, self.game_over, self.paused, self.bombs, self.flags, self.buttons, row, col, self.bomb_count, self.started)
 
     def on_button_click(self, row, col):
@@ -217,7 +223,7 @@ class CampoMinado:
         num_bombs_label.pack()
 
         num_flags_label = tk.Label(
-            intro_window, text=f"Número de Bandeiras: {self.bombs + 2}")
+            intro_window, text=f"Número de Bandeiras: {self.bombs}")
         num_flags_label.pack()
 
         board_label = tk.Label(

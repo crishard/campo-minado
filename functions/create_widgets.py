@@ -1,5 +1,5 @@
 import tkinter as tk
-def create_widgets_function(campo_minado):
+def create_widgets_function(campo_minado):    
     campo_minado.frame = tk.Frame(campo_minado.root)
     campo_minado.frame.grid(row=1, column=1, padx=10, pady=10)
 
@@ -16,6 +16,11 @@ def create_widgets_function(campo_minado):
     campo_minado.abandon_button = tk.Button(
         button_frame, text='Abandonar', command=campo_minado.abandon_game)
     campo_minado.abandon_button.pack(side=tk.LEFT, padx=10)
+    
+    campo_minado.flag_label = tk.Label(campo_minado.frame, text="Bandeiras para uso: {campo_minado.bombs}")
+    campo_minado.flag_label.grid(row=campo_minado.rows + 4, columnspan=campo_minado.cols + 1, pady=5)
+    campo_minado.update_flag_label()
+
 
     for row in range(campo_minado.rows):
         letter_label = tk.Label(campo_minado.frame, text=chr(65 + row))
