@@ -1,6 +1,4 @@
-# Este repositório tem como finalidade o desenvolvimento de um campo minado, o qual sera utilizado para as avaliações da disciplina de Tópicos Especiais II, a qual estamos abordando o tema de testes de software
-
-## Requisitos
+# Requisitos E casos de testes
 
 1. O software deve exibir um menu com todas as opções do jogo ao jogador e deve permitir que o jogador inicie um novo jogo escolhendo o nível de dificuldade.
     + Testar se o menu de dificuldade está sendo criado corretamente

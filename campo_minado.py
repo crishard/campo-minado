@@ -13,6 +13,10 @@ from functions.toggle_pause import toggle_pause_function
 from functions.check_game_over import check_game_over_function
 from functions.update_time import update_time_function
 from functions.end_game import end_game_function
+import json
+import uuid
+import os
+
 
 
 class CampoMinado:
@@ -42,6 +46,7 @@ class CampoMinado:
         self.victory_time = None
         self.create_widgets()
         self.place_bombs()
+        self.historico_partidas = self.load_historico_partidas()
         calculate_numbers_function(self.field, self.rows, self.cols)
 
     def get_current_difficulty(self):
@@ -66,8 +71,44 @@ class CampoMinado:
     def show_defeat_popup(self):
         show_defeat_popup_function(self.root, show_game)
 
+    def load_historico_partidas(self):
+        try:
+            with open('historico_partidas.json', 'r') as json_file:
+                data = json_file.read()
+                if data:
+                    return json.loads(data)
+                else:
+                    return []
+        except FileNotFoundError:
+            # Se o arquivo não existe, comece com uma lista vazia
+            return []
+        except json.decoder.JSONDecodeError:
+            # Se o arquivo existe, mas não é um JSON válido, comece com uma lista vazia
+            return []
+
+
+    
     def show_victory_popup(self):
         show_victory_popup_function(self.victory_time, self.root, show_game)
+        if not os.environ.get('TESTING', False) and self.started:
+            self.victory_time = datetime.datetime.now()
+            elapsed_time = datetime.datetime.now() - self.start_time
+            seconds = elapsed_time.total_seconds()
+            hours, remainder = divmod(seconds, 3600)
+            minutes, seconds = divmod(remainder, 60)
+            formatted_time = f'{int(hours):02d}:{int(minutes):02d}:{int(seconds):02d}'
+            game_result = {
+                'id': str(uuid.uuid4()),
+                'difficulty': self.current_difficulty,
+                'result': 'Vitória',
+                'time_elapsed': formatted_time
+            }
+            self.historico_partidas.append(game_result)
+
+            
+            with open('historico_partidas.json', 'w') as json_file:
+                json.dump(self.historico_partidas, json_file, indent=4)
+
 
     def check_game_over(self):
         check_game_over_function(self)
@@ -78,6 +119,24 @@ class CampoMinado:
 
     def end_game(self):
         end_game_function(self)
+        if not os.environ.get('TESTING', False) and self.started:
+            elapsed_time = datetime.datetime.now() - self.start_time
+            seconds = elapsed_time.total_seconds()
+            hours, remainder = divmod(seconds, 3600)
+            minutes, seconds = divmod(remainder, 60)
+            formatted_time = f'{int(hours):02d}:{int(minutes):02d}:{int(seconds):02d}'
+            game_result = {
+                'id': str(uuid.uuid4()),
+                'difficulty': self.current_difficulty,
+                'result': 'Derrota',
+                'time_elapsed': formatted_time
+            }
+            self.historico_partidas.append(game_result)
+
+            
+            with open('historico_partidas.json', 'w') as json_file:
+                json.dump(self.historico_partidas, json_file, indent=4)
+
 
     def on_right_click(self, event, row, col):
         self.bomb_count = on_right_click_function(
@@ -183,7 +242,7 @@ def show_game(difficulty, show_difficulty_menu, root):
     game = None
     if difficulty == "Fácil":
         game = start_game(
-            8, 8, 10, root, show_difficulty_menu_function(root, show_game))
+            8, 8, 1, root, show_difficulty_menu_function(root, show_game))
         game.show_intro_screen()
         game.current_difficulty = "Fácil"
     elif difficulty == "Intermediário":

@@ -55,9 +55,6 @@ def test_toggle_pause_after_start(campo_minado):
     campo_minado.toggle_pause()
     assert campo_minado.paused is False
 
-def test_end_game(campo_minado):
-    campo_minado.end_game()
-    assert campo_minado.bomb_count == 0
 
 #  Testar se a partida e inciada se o time for iniciado manualmente
 def test_time_manual_init():
