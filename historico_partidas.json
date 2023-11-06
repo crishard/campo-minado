@@ -1,20 +1,26 @@
 [
     {
-        "id": "b26e8d65-e6ee-44f0-840f-0d3b385baa25",
+        "id": "9587eed9-f323-4004-8cb9-47cab17f061f",
         "difficulty": "F\u00e1cil",
         "result": "Derrota",
         "time_elapsed": "00:00:00"
     },
     {
-        "id": "f91f9c1a-b8c3-437c-93f9-4c3bf6a90875",
-        "difficulty": "F\u00e1cil",
+        "id": "a9506b9c-e23f-4ab6-b3aa-7cd1646aecc7",
+        "difficulty": "",
         "result": "Derrota",
-        "time_elapsed": "00:00:02"
+        "time_elapsed": "00:00:00"
     },
     {
-        "id": "12c30a30-11a9-4477-afe0-2e6831669440",
-        "difficulty": "F\u00e1cil",
+        "id": "5c71d1e4-445f-495e-b99e-648dd58ce0f3",
+        "difficulty": "",
         "result": "Vit\u00f3ria",
-        "time_elapsed": "00:00:01"
+        "time_elapsed": "00:00:00"
+    },
+    {
+        "id": "1315252f-bffa-4767-98f2-54f33a3a301d",
+        "difficulty": "F\u00e1cil",
+        "result": "Derrota",
+        "time_elapsed": "00:00:00"
     }
 ]
