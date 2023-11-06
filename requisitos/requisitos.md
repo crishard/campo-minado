@@ -34,37 +34,37 @@
     + Testar se o a tela de jogo foi criada ✔️
 
 6. O jogo deve ter um tabuleiro de jogo com dimensões 8x8 para o nível fácil
-    + Testar se o jogo em "Fácil" tem 8 linhas
-    + Testar se o jogo em “Fácil” tem 8 colunas.
-    + Testar se o tabuleiro está vazio no início.
-    + Testar se é possível marcar no tabuleiro.
-    + Testar se a posição de jogada está dentro do tabuleiro.
-    + Testar se o jogo inicia exibindo o time da partida
-    + Testar se o jogo deixa visível o botão de pausa da partida
-    + Testar se o jogo deixa visível o botão de abandonar a partida
-    + Testar se o jogo deixa visível o botão de reiniciar a partida
+    + Testar se o jogo em "Fácil" tem 8 linhas ✔️
+    + Testar se o jogo em “Fácil” tem 8 colunas. ✔️
+    + Testar se o tabuleiro está vazio no início. ✔️
+    + Testar se é possível marcar no tabuleiro. ✔️
+    + Testar se a posição de jogada está dentro do tabuleiro. ✔️
+    + Testar se o jogo inicia exibindo o time da partida ✔️
+    + Testar se o jogo deixa visível o botão de pausa da partida ✔️
+    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
+    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
 
 7. O jogo deve ter um tabuleiro de jogo com dimensões 10x16 para intermediário
-    + Testar se o jogo em “Intermediário” tem 10 linhas.
-    + Testar se o jogo em “Intermediário” tem 16 colunas.
-    + Testar se o tabuleiro está vazio no início
-    + Testar se é possível marcar no tabuleiro
-    + Testar se a posição de jogada está dentro do tabuleiro
-    + Testar se o jogo inicia exibindo o time da partida
-    + testar se o jogo deixa visível o botão de pausa da partida
-    + Testar se o jogo deixa visível o botão de abandonar a partida
-    + Testar se o jogo deixa visível o botão de reiniciar a partida
+    + Testar se o jogo em “Intermediário” tem 10 linhas. ✔️
+    + Testar se o jogo em “Intermediário” tem 16 colunas. ✔️
+    + Testar se o tabuleiro está vazio no início ✔️
+    + Testar se é possível marcar no tabuleiro ✔️
+    + Testar se a posição de jogada está dentro do tabuleiro ✔️
+    + Testar se o jogo inicia exibindo o time da partida ✔️
+    + testar se o jogo deixa visível o botão de pausa da partida ✔️
+    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
+    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
 
 8. O jogo deve ter um tabuleiro de jogo com dimensões 24x24 para difícil.
-    + Testar se o jogo em “Difícil” tem 24 linhas
-    + Testar se o jogo em “Difícil” tem 24 colunas
-    + Testar se o tabuleiro está vazio no início
-    + Testar se é possível marcar no tabuleiro
-    + Testar se a posição de jogada está dentro do tabuleiro
-    + Testar se o jogo inicia exibindo o time da partida
-    + testar se o jogo deixa visível o botão de pausa da partida
-    + Testar se o jogo deixa visível o botão de abandonar a partida
-    + Testar se o jogo deixa visível o botão de reiniciar a partida
+    + Testar se o jogo em “Difícil” tem 24 linhas ✔️
+    + Testar se o jogo em “Difícil” tem 24 colunas ✔️
+    + Testar se o tabuleiro está vazio no início ✔️
+    + Testar se é possível marcar no tabuleiro ✔️
+    + Testar se a posição de jogada está dentro do tabuleiro ✔️
+    + Testar se o jogo inicia exibindo o time da partida ✔️
+    + testar se o jogo deixa visível o botão de pausa da partida ✔️
+    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
+    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
 
 9. O número de bombas no tabuleiro deve ser fixo 10 bombas para fácil.
     + Testar se o número de bombas do tabuleiro é maior que 10

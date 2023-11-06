@@ -27,7 +27,6 @@ def test_start_game_intermediate(root):
 
 # Testa se o nível difícil é selecionado corretamente
 
-
 def test_start_game_hard(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Difícil", show_difficulty_menu_function, root)
@@ -47,32 +46,45 @@ def test_choose_difficulty_window(root):
 
     assert any(button.winfo_class() == 'Button' for button in buttons)
 
-#  Testa se as dimenssoes estao corretas
-
-
-def test_dimension_easy(root):
+#  Testa se as dimenssoes estao corretas nivel facil
+def test_dimension_rows_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    assert game.rows and game.cols == 8
+    assert game.rows == 8
+def test_dimension_cols_easy(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
 
+    assert game.cols == 8
 
-def test_dimension_mid(root):
+#  Testa se as dimenssoes estao corretas nivel intermediario
+def test_dimension_rows_itermediate(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Intermediário", show_difficulty_menu_function, root)
 
-    assert game.rows == 10 and game.cols == 16
+    assert game.rows == 10
 
+def test_dimension_cols_itermediate(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
 
-def test_dimension_hard(root):
+    assert game.cols == 16
+
+#  Testa se as dimenssoes estao corretas nivel dificil
+def test_dimension_rows_hard(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Difícil", show_difficulty_menu_function, root)
 
-    assert game.rows and game.cols == 24
+    assert game.rows == 24
+
+def test_dimension_cols_hard(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    assert game.cols == 24
 
 # verifica se o tabuleiro inciou coberto
-
-
 def test_matriz_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
@@ -103,8 +115,6 @@ def test_matriz_hard(root):
             assert isinstance(button, tk.Button)
 
 # teste de jogada no tabuleiro
-
-
 def test_play_in_matriz_easy(root):
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
@@ -230,8 +240,6 @@ def test_non_empty_board_hard(root):
 
 
 # Testa se a introducao esta sendo exibida corretamente
-
-
 @patch("campo_minado.CampoMinado.show_intro_screen", return_value=True)
 def test_show_intro_screen(mock_show_intro_screen, root):
     show_difficulty_menu_function(root, show_game)
@@ -276,3 +284,22 @@ def test_back_to_menu_button(mock_show_difficulty_menu_function, root):
 
     back_button.invoke()
     mock_show_difficulty_menu_function.assert_called_once_with(root, show_game)
+
+# botao pause visivel em cada nivel
+def test_pause_button_visibility_easy(root):  # Passar função fictícia para show_game
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Fácil", show_difficulty_menu_function, root)
+
+    assert game.pause_button  # Verifica se o botão de pausa está visível
+
+def test_pause_button_visibility_intermediate(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Intermediário", show_difficulty_menu_function, root)
+
+    assert game.pause_button
+
+def test_pause_button_visibility_hard(root):
+    show_difficulty_menu_function(root, show_game)
+    game = show_game("Difícil", show_difficulty_menu_function, root)
+
+    assert game.pause_button
