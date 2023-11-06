@@ -32,3 +32,35 @@ def test_hard_button_creation():
     children = root.winfo_children()[0].winfo_children()[4]  # O índice 4 representa o botão "Difícil"
     if children.winfo_exists():
         assert children["text"] == "Difícil"
+
+def test_options_menu_creation():
+    root = tk.Tk()
+    show_difficulty_menu_function(root, lambda x, y: None)  # Passar função fictícia para show_game
+    frame = root.winfo_children()[0]  # Pega o frame raiz
+    options_buttons = frame.winfo_children()[7:10]  # Botões de opções
+
+    for button in options_buttons:
+        assert button.winfo_exists()  # Verifica se o botão está presente
+
+
+def test_history_button_creation():
+    root = tk.Tk()
+    show_difficulty_menu_function(root, lambda x, y: None) 
+    children = root.winfo_children()[0].winfo_children()[5] 
+    if children.winfo_exists(): 
+        assert children["text"] == "Histórico"
+
+def test_tutorial_button_creation():
+    root = tk.Tk()
+    show_difficulty_menu_function(root, lambda x, y: None)
+    children = root.winfo_children()[0].winfo_children()[6]  # O índice 3 representa o botão "Intermediário"
+    if children.winfo_exists():
+        assert children["text"] == "Tutorial"
+
+
+def test_out_game_button_creation():
+    root = tk.Tk()
+    show_difficulty_menu_function(root, lambda x, y: None)
+    children = root.winfo_children()[0].winfo_children()[7]  # O índice 4 representa o botão "Difícil"
+    if children.winfo_exists():
+        assert children["text"] == "Sair do jogo"

@@ -1,10 +1,10 @@
 # Requisitos e casos de testes
 
 1. O software deve exibir um menu com todas as opções do jogo ao jogador e deve permitir que o jogador inicie um novo jogo escolhendo o nível de dificuldade.
-    + Testar se o menu de dificuldade está sendo criado corretamente
-    + Testar se o botão de nível fácil está sendo criado.
-    + Testar se o botão de nível intermediário está sendo criado.
-    + Testar se o botão de nível difícil está sendo criado.
+    + Testar se o menu de dificuldade está sendo criado corretamente ✔️
+    + Testar se o botão de nível fácil está sendo criado. ✔️
+    + Testar se o botão de nível intermediário está sendo criado. ✔️
+    + Testar se o botão de nível difícil está sendo criado. ✔️
 
 2. O jogo deve contar com mais opções em seu menu inicial
     + Testar se o menu de opções está sendo criado corretamente
