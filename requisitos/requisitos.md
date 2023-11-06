@@ -67,43 +67,46 @@
     + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
 
 9. O número de bombas no tabuleiro deve ser fixo 10 bombas para fácil.
-    + Testar se o número de bombas do tabuleiro é maior que 10
-    + Testar se o número de bombas do tabuleiro é menor que 10
-    + Testar se o número de bombas é igual a 10
-    + Testar se o tabuleiro só contém bombas
-    + Testar se o tabuleiro não contém bombas
-    + Testar se as bombas estão posicionadas em locais válidos
-    + Testar se existe alguma bomba no tabuleiro
-    + Testar se o número de bombas é negativo
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido)
-    + Testar se existem espaços suficientes para as bombas
-    + Testar se o tabuleiro é de tamanho vazio
+    + Testar se o número de bombas do tabuleiro é maior que 10 ✔️
+    + Testar se o número de bombas do tabuleiro é menor que 10 ✔️
+    + Testar se o número de bombas é igual a 10 ✔️
+    + Testar se o tabuleiro só contém bombas ✔️
+    + Testar se o tabuleiro não contém bombas ✔️
+    + Testar se as bombas estão posicionadas em locais válidos ✔️
+    + Testar se existe alguma bomba no tabuleiro ✔️
+    + Testar se o número de bombas é negativo ✔️
+    + Testar se ha bombas dentro do tabuleiro ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de  teste, um para string, outro para boolean e outro para inválido) ✔️
+    + Testar se existem espaços suficientes para as bombas ✔️
+    + Testar se o tabuleiro é de tamanho vazio ✔️
 
 10. O número de bombas no tabuleiro deve ser fixo 30 bombas para intermediário.
-    + Testar se o número de bombas do tabuleiro é maior que 30
-    + Testar se o número de bombas do tabuleiro é menor que 30
-    + Testar se o número de bombas é igual a 30
-    + Testar se o tabuleiro só contém bombas
-    + Testar se o tabuleiro não contém bombas
-    + Testar se as bombas estão posicionadas em locais válidos
-    + Testar se existe alguma bomba no tabuleiro
-    + Testar se o número de bombas é negativo
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido)
-    + Testar se existem espaços suficientes para as bombas
-    + Testar se o tabuleiro é de tamanho vazio
+    + Testar se o número de bombas do tabuleiro é maior que 30 ✔️
+    + Testar se o número de bombas do tabuleiro é menor que 30 ✔️
+    + Testar se o número de bombas é igual a 30 ✔️
+    + Testar se o tabuleiro só contém bombas ✔️
+    + Testar se o tabuleiro não contém bombas ✔️
+    + Testar se as bombas estão posicionadas em locais válidos ✔️
+    + Testar se existe alguma bomba no tabuleiro ✔️
+    + Testar se o número de bombas é negativo ✔️
+    + Testar se ha bombas dentro do tabuleiro ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido) ✔️
+    + Testar se existem espaços suficientes para as bombas ✔️
+    + Testar se o tabuleiro é de tamanho vazio ✔️
 
 11. O número de bombas no tabuleiro deve ser fixo 100 bombas para difícil.
-    + Testar se o número de bombas do tabuleiro é maior que 100
-    + Testar se o número de bombas do tabuleiro é menor que 100
-    + Testar se o número de bombas é igual a 100
-    + Testar se o tabuleiro só contém bombas
-    + Testar se o tabuleiro não contém bombas
-    + Testar se as bombas estão posicionadas em locais válidos
-    + Testar se existe alguma bomba no tabuleiro
-    + Testar se o número de bombas é negativo
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido)
-    + Testar se existem espaços suficientes para as bombas
-    + Testar se o tabuleiro é de tamanho vazio
+    + Testar se o número de bombas do tabuleiro é maior que 100 ✔️
+    + Testar se o número de bombas do tabuleiro é menor que 100 ✔️
+    + Testar se o número de bombas é igual a 100 ✔️
+    + Testar se o tabuleiro só contém bombas ✔️
+    + Testar se o tabuleiro não contém bombas ✔️
+    + Testar se as bombas estão posicionadas em locais válidos ✔️
+    + Testar se existe alguma bomba no tabuleiro ✔️
+    + Testar se o número de bombas é negativo ✔️
+    + Testar se ha bombas dentro do tabuleiro ✔️
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de teste, um para string, outro para boolean e outro para inválido) ✔️
+    + Testar se existem espaços suficientes para as bombas ✔️
+    + Testar se o tabuleiro é de tamanho vazio ✔️
 
 12. As bombas devem ser organizadas de forma aleatória dentro do tabuleiro
     + Testar se todas as bombas estão dentro do tabuleiro

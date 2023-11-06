@@ -242,7 +242,7 @@ def show_game(difficulty, show_difficulty_menu, root):
     game = None
     if difficulty == "Fácil":
         game = start_game(
-            8, 8, 1, root, show_difficulty_menu_function(root, show_game))
+            8, 8, 10, root, show_difficulty_menu_function(root, show_game))
         game.show_intro_screen()
         game.current_difficulty = "Fácil"
     elif difficulty == "Intermediário":
