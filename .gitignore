@@ -2,4 +2,8 @@
 /build
 /campo_minado.spec
 __pycache__/
+/functions/__pycache__/
+/tests/__pycache__/
 /.pytest_cache
+/tests/.pytest_cache
+/trash_tests
