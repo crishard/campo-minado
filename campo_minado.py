@@ -53,6 +53,21 @@ class CampoMinado:
     def get_current_difficulty(self):
         return self.current_difficulty
 
+    def restart_game(self):
+        self.game_over = False
+        self.is_game_over = False
+        self.started = False
+        self.flags = [[False for _ in range(self.cols)] for _ in range(self.rows)]
+        self.field = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
+        self.buttons = [[None for _ in range(self.cols)] for _ in range(self.rows)]
+        self.bomb_count = 0
+        self.used_flags = 0
+        self.create_widgets()  # Recria os widgets
+        self.place_bombs()  # Reposiciona as bombas
+        self.update_flag_label()  # Atualiza a contagem de bandeiras
+        self.update_time()  # Reinicia o contador de tempo
+
+
     def create_widgets(self):
         create_widgets_function(self)
 

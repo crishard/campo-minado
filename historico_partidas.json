@@ -40,5 +40,23 @@
         "difficulty": "F\u00e1cil",
         "result": "Derrota",
         "time_elapsed": "00:00:00"
+    },
+    {
+        "id": "bfb5af81-5d44-4975-aff6-aa7abae29f64",
+        "difficulty": "F\u00e1cil",
+        "result": "Derrota",
+        "time_elapsed": "00:00:00"
+    },
+    {
+        "id": "45f871b5-4b2a-46c2-bfec-7dca6a868bfc",
+        "difficulty": "Intermedi\u00e1rio",
+        "result": "Derrota",
+        "time_elapsed": "00:00:00"
+    },
+    {
+        "id": "672fadfe-7e13-40d2-8cac-cab7489a3aae",
+        "difficulty": "F\u00e1cil",
+        "result": "Derrota",
+        "time_elapsed": "00:00:00"
     }
 ]

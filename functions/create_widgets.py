@@ -16,6 +16,10 @@ def create_widgets_function(campo_minado):
     campo_minado.abandon_button = tk.Button(
         button_frame, text='Abandonar', command=campo_minado.abandon_game)
     campo_minado.abandon_button.pack(side=tk.LEFT, padx=10)
+
+    restart_button = tk.Button(
+        button_frame, text='Reiniciar', command=campo_minado.restart_game)
+    restart_button.pack(side=tk.LEFT, padx=10)
     
     campo_minado.flag_label = tk.Label(campo_minado.frame, text="Bandeiras para uso: {campo_minado.bombs}")
     campo_minado.flag_label.grid(row=campo_minado.rows + 4, columnspan=campo_minado.cols + 1, pady=5)
