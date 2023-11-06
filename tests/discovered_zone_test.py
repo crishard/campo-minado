@@ -1,12 +1,8 @@
 import pytest
-from functions.on_right_click import on_right_click_function
 import tkinter as tk
-
-import subprocess
-import tkinter as tk
-from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game, CampoMinado
+from campo_minado import show_game
 from functions.show_difficulty_menu import show_difficulty_menu_function
-import pytest
+
 
 event = None
 game_over = False
@@ -23,7 +19,6 @@ started = True
 
 #  Testa se existe alguma bandeira na zona
 def test_no_flag_before_button_click():
-    # Coordenadas da célula que você deseja testar
     cell_row = 0
     cell_col = 0
     
@@ -31,25 +26,21 @@ def test_no_flag_before_button_click():
 
 #  Testa se a zona esta descoberta antes do click
 def test_zone_already_discovered_before_button_click():
-    # Coordenadas da zona que você deseja testar
     zone_row = 0
     zone_col = 0
 
-    buttons = [[{'text': '1'} for _ in range(8)] for _ in range(8)]  # Suponhamos que todas as células têm valores diferentes de vazio
-    # (certifique-se de passar as coordenadas corretas para a zona)
-
-    # Verifique se as células da zona ainda estão descobertas após o clique
+    buttons = [[{'text': '1'} for _ in range(8)] for _ in range(8)]  
+  
     for row in range(zone_row, zone_row + 3):
         for col in range(zone_col, zone_col + 3):
             assert buttons[row][col]['text'] != '', f"A célula ({row}, {col}) não está descoberta antes do clique."
 
 #  Testa se a zona esta coberta antes do click
 def test_zone_is_covered_before_button_click():
-    # Coordenadas da zona que você deseja testar
     zone_row = 0
     zone_col = 0
 
-    buttons = [[{'text': ''} for _ in range(8)] for _ in range(8)]  # Suponhamos que todas as células estão vazias
+    buttons = [[{'text': ''} for _ in range(8)] for _ in range(8)]
 
     for row in range(zone_row, zone_row + 3):
         for col in range(zone_col, zone_col + 3):
@@ -57,34 +48,27 @@ def test_zone_is_covered_before_button_click():
 
 #  Testa se a zona contem bomba- jogador deve perder a partida
 def test_zone_contains_bomb():
-    # Coordenadas da zona que você deseja testar
     zone_row = 0
     zone_col = 0
 
     root = tk.Tk()
-
-    # Inicialize o estado do jogo com uma bomba na zona escolhida
 
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
     for row in range(zone_row, zone_row + 3):
         for col in range(zone_col, zone_col + 3):
-            game.field[row][col] = -1  # Coloca uma bomba na célula
+            game.field[row][col] = -1 
 
     game.on_button_click(zone_row, zone_col)
 
-    # Verifique se o jogo termina (derrota) após o clique na zona
     assert game.game_over is True, "O jogo não terminou após o clique na zona com uma bomba."
 
 #  Testa se a zona esta descoberta apos o click
 def test_zone_discoverd_after_click():
-    # Coordenadas da zona que você deseja testar
     zone_row = 0
     zone_col = 0
 
     root = tk.Tk()
-
-    # Inicialize o estado do jogo com uma bomba na zona escolhida
 
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
@@ -94,6 +78,5 @@ def test_zone_discoverd_after_click():
 
     game.on_button_click(zone_row, zone_col)
 
-    # Verifique se o jogo termina (derrota) após o clique na zona
     assert game.buttons[row][col] != '', "O jogo não terminou após o clique na zona com uma bomba."
 

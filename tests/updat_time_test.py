@@ -31,7 +31,7 @@ def test_update_time_game_over(campo_minado):
     campo_minado.game_over = True
     campo_minado.update_time()
     elapsed_time = campo_minado.time_label.cget('text')
-    assert elapsed_time == "Tempo: 0"   # Verifique se a string atualizada está vazia
+    assert elapsed_time == "Tempo: 0"  
 
 
 def test_update_time_victory(campo_minado):

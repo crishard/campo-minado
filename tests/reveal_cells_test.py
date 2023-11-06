@@ -36,7 +36,7 @@ def test_reveal_cell_reveals_zero_neighboring_cells():
         [0, -1, 0],
         [0, 0, 0]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False],
         [False, False, False],

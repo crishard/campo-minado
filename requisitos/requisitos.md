@@ -109,12 +109,12 @@
     + Testar se o tabuleiro é de tamanho vazio ✔️
 
 12. As bombas devem ser organizadas de forma aleatória dentro do tabuleiro
-    + Testar se todas as bombas estão dentro do tabuleiro
-    + Testar se alguma bomba está sendo colocada fora do tabuleiro
-    + Testar se as bombas estão organizadas sequencialmente nas linhas do tabuleiro
-    + Testar se as bombas estão organizadas sequencialmente nas colunas do tabuleiro
-    + Testar se as bombas podem ser organizadas em todas as zonas do tabuleiro
-    + Testar se as bombas estão sendo organizadas de forma aleatória
+    + Testar se todas as bombas estão dentro do tabuleiro ✔️
+    + Testar se alguma bomba está sendo colocada fora do tabuleiro ✔️
+    + Testar se as bombas estão organizadas sequencialmente nas linhas do tabuleiro ✔️
+    + Testar se as bombas estão organizadas sequencialmente nas colunas do tabuleiro  ✔️
+    + Testar se as bombas podem ser organizadas em todas as zonas do tabuleiro  ✔️
+    + Testar se as bombas estão sendo organizadas de forma aleatória ✔️
 
 13. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
     + Testar se o tabuleiro é gerado

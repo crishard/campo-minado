@@ -1,5 +1,5 @@
 import tkinter as tk
-from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game, CampoMinado
+from campo_minado import create_game_instance, show_game
 from functions.show_difficulty_menu import show_difficulty_menu_function
 import pytest
 
@@ -46,7 +46,7 @@ def test_on_click_has_adjacent_bombs(root):
 
 
 def test_on_click_no_adjacent_bombs(root):
-    # Tabuleiro 4x4 com bombas posicionadas manualmente
+    
     board = [
         [0, -1, 0, 0],
         [0, 0, 0, -1],
@@ -57,12 +57,12 @@ def test_on_click_no_adjacent_bombs(root):
     zone_row = 1
     zone_col = 1
     game = create_game_instance(root, 4, 4, 4)
-    game.field = board  # Substitua o campo do jogo pelo tabuleiro manual
+    game.field = board 
 
-    # Execute a função on_button_click para a célula
+    
     game.on_button_click(zone_row, zone_col)
 
     button_text = game.buttons[zone_row][zone_col]["text"]
-    expected_text = "0"  # Sem bombas adjacentes, o texto deve estar vazio
+    expected_text = "0" 
 
     assert button_text == expected_text, f"A célula clicada não exibe o texto correto. Esperado: {expected_text}, Obtido: {button_text}"

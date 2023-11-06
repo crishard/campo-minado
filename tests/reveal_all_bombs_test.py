@@ -1,6 +1,5 @@
 import pytest
 from functions.reveal_all_bombs import reveal_all_bombs_function
-import tkinter as tk
 from tkinter import Button
 
 
@@ -1262,14 +1261,12 @@ from tkinter import Button
 
 
 ])
-# chamda da funcao
+
 def test_reveal_all_bombs(rows, cols, field, expected_output):
-    # Crie uma matriz de botões para usar nos testes
     buttons = [[Button() for _ in range(cols)] for _ in range(rows)]
 
     reveal_all_bombs_function(rows, cols, field, buttons)
 
-    # Verifique se os botões foram atualizados corretamente
     for row in range(rows):
         for col in range(cols):
             assert buttons[row][col]['text'] == expected_output[row][col]

@@ -106,72 +106,6 @@ def test_defeat_popup_creation():
 
     root.destroy()
 
-
-# def test_ok_button_closes_popup():
-
-#     root = tk.Tk()
-
-#     def show_difficulty_menu():
-#         pass
-
-#     show_defeat_popup_function(root, show_difficulty_menu)
-
-#     children = root.winfo_children()
-#     assert len(children) == 1
-#     defeat_popup = children[0]
-#     assert isinstance(defeat_popup, tk.Toplevel)
-
-#     ok_button = defeat_popup.children['!button']
-#     ok_button.invoke()
-
-#     assert len(root.winfo_children()) == 0
-
-#     root.destroy()
-
-
-# def test_defeat_popup_and_main_window_closed():
-#     root = tk.Tk()
-
-#     def show_difficulty_menu():
-#         pass
-
-#     show_defeat_popup_function(root, show_difficulty_menu)
-
-#     children = root.winfo_children()
-#     assert len(children) == 1
-#     defeat_popup = children[0]
-#     assert isinstance(defeat_popup, tk.Toplevel)
-
-#     ok_button = defeat_popup.children['!button']
-#     ok_button.invoke()
-
-#     assert len(root.winfo_children()) == 0
-
-#     root.destroy()
-
-
-# def test_ok_button_click():
-
-#     root = tk.Tk()
-
-#     def show_difficulty_menu():
-#         pass
-
-#     show_defeat_popup_function(root, show_difficulty_menu)
-
-#     children = root.winfo_children()
-#     assert len(children) == 1
-#     defeat_popup = children[0]
-#     assert isinstance(defeat_popup, tk.Toplevel)
-
-#     ok_button = defeat_popup.children['!button']
-#     ok_button.invoke()
-
-#     assert len(root.winfo_children()) == 0
-
-#     root.destroy()
-
-
 def test_show_victory_popup_creation():
     root = tk.Tk()
 
@@ -187,30 +121,6 @@ def test_show_victory_popup_creation():
     assert isinstance(victory_popup, tk.Toplevel)
 
     root.destroy()
-
-# def test_back_to_menu_button():
-#     root = tk.Tk()
-
-#     def show_difficulty_menu():
-#         pass
-
-#     victory_time = timedelta(seconds=3600)
-#     show_victory_popup_function(victory_time, root, show_difficulty_menu)
-
-#     children = root.winfo_children()
-#     assert len(children) == 1
-#     victory_popup = children[0]
-#     assert isinstance(victory_popup, tk.Toplevel)
-
-#     back_to_menu_button = victory_popup.children['!button']
-#     back_to_menu_button.invoke()
-
-#     assert len(root.winfo_children()) == 0
-
-#     root.destroy()
-
-# Teste para verificar se o clique do botão do mouse funciona no popup de vitória (você pode adicionar este teste se desejar)
-
 
 def test_mouse_click_on_victory_popup():
     root = tk.Tk()

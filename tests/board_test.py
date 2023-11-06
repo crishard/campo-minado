@@ -286,11 +286,11 @@ def test_back_to_menu_button(mock_show_difficulty_menu_function, root):
     mock_show_difficulty_menu_function.assert_called_once_with(root, show_game)
 
 # botao pause visivel em cada nivel
-def test_pause_button_visibility_easy(root):  # Passar função fictícia para show_game
+def test_pause_button_visibility_easy(root):  
     show_difficulty_menu_function(root, show_game)
     game = show_game("Fácil", show_difficulty_menu_function, root)
 
-    assert game.pause_button  # Verifica se o botão de pausa está visível
+    assert game.pause_button  
 
 def test_pause_button_visibility_intermediate(root):
     show_difficulty_menu_function(root, show_game)

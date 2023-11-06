@@ -1,10 +1,8 @@
 import pytest
 import tkinter as tk
 
-import tkinter as tk
 from campo_minado import  show_game
 from functions.show_difficulty_menu import show_difficulty_menu_function
-import pytest
 
 event = None
 game_over = False

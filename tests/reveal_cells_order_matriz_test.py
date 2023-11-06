@@ -8,7 +8,7 @@ def test_reveal_cell_reveals_zero_bombs_1x1():
     game.field = [
         [0],
     ]
-    game.reveal_cell(0, 0)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(0, 0) 
     assert game.flags == [
         [True],
 
@@ -22,7 +22,7 @@ def test_reveal_cell_reveals_zero_bombs_3x3():
         [0, -1, 0],
         [0, 0, 0]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False],
         [False, False, False],
@@ -37,7 +37,7 @@ def test_reveal_cell_reveals_zero_2x2():
         [0, 0,],
         [0, -1],
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False],
         [False, False],
@@ -53,7 +53,7 @@ def test_reveal_cell_reveals_zero_4x4():
         [0, 0, 0, 0],
         [0, 0, 0, 0]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False, False],
         [False, False, False, False],
@@ -72,7 +72,7 @@ def test_reveal_cell_reveals_zero_5x5():
         [0, 0, 0, 0, 0,],
         [0, 0, 0, 0, 0,]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False, False, False],
         [False, False, False, False, False],
@@ -93,7 +93,7 @@ def test_reveal_cell_reveals_7x7():
         [0, -1, 0, 0, 0, 0, 0],
         [-1, 0, 0, 0, 0, 0, 0]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False, False, False, False, False],
         [False, False, False, False, False, False, False],
@@ -119,7 +119,7 @@ def test_reveal_cell_reveals_9x9():
         [0, -1, 0, 0, 0, 0, 0, 0, 0],
         [-1, 0, 0, 0, 0, 0, 0, 0, 0]
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False, False, False, False, False, False, False],
         [False, False, False, False, False, False, False, False, False],
@@ -149,7 +149,7 @@ def test_reveal_cell_reveals_10x17():
         [-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, -1, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ]
-    game.reveal_cell(1, 1)  # a célula contem bomba, jogo encerrado
+    game.reveal_cell(1, 1) 
     assert game.flags == [
         [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
         [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],

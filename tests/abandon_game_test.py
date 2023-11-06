@@ -15,7 +15,6 @@ def test_abandon_game_game_over(campo_minado, mocker):
     mocker.patch.object(campo_minado, 'show_difficulty_menu', return_value=None)
     campo_minado.abandon_game()
 
-    # game_over inicia como false e altera para true no inicio da partida, e vira false apos derrota ou abandono
     assert campo_minado.game_over is not True
 
 def test_abandon_game_paused(campo_minado, mocker):
@@ -23,7 +22,6 @@ def test_abandon_game_paused(campo_minado, mocker):
     campo_minado.paused = True
     campo_minado.abandon_game()
 
-    # game_over inicia como false e altera para true no inicio da partida, e vira false apos derrota ou abandono
     assert campo_minado.game_over is not  True
 
 def test_abandon_game_after_long_time(campo_minado, mocker):

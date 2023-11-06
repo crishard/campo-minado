@@ -1,12 +1,8 @@
 import pytest
 from functions.on_right_click import on_right_click_function
 import tkinter as tk
-
-import subprocess
-import tkinter as tk
-from campo_minado import create_game_instance, show_difficulty_menu, show_game, start_game, CampoMinado
+from campo_minado import show_game
 from functions.show_difficulty_menu import show_difficulty_menu_function
-import pytest
 
 event = None
 game_over = False
