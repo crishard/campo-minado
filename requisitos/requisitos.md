@@ -1,100 +1,100 @@
 # Requisitos e casos de testes
 
 1. O software deve exibir um menu com todas as opções do jogo ao jogador e deve permitir que o jogador inicie um novo jogo escolhendo o nível de dificuldade.
-    + Testar se o menu de dificuldade está sendo criado corretamente ✔️
-    + Testar se o botão de nível fácil está sendo criado. ✔️
-    + Testar se o botão de nível intermediário está sendo criado. ✔️
-    + Testar se o botão de nível difícil está sendo criado. ✔️
-    + Testar se o menu de opções está sendo criado corretamente ✔️
-    + Testar se ele pode escolher visualizar o tutorial ✔️
-    + Testar se ele pode escolher visualizar o histórico ✔️
-    + Testar se ele pode escolher fechar o jogo a partir desse menu ✔️
+    + Testar se o menu de dificuldade está sendo criado corretamente
+    + Testar se o botão de nível fácil está sendo criado.
+    + Testar se o botão de nível intermediário está sendo criado.
+    + Testar se o botão de nível difícil está sendo criado.
+    + Testar se o menu de opções está sendo criado corretamente
+    + Testar se ele pode escolher visualizar o tutorial
+    + Testar se ele pode escolher visualizar o histórico
+    + Testar se ele pode escolher fechar o jogo a partir desse menu
 
 2. Deve ser possível selecionar o nível fácil
-    + Testar se o botão fácil está visível ✔️
-    + Testar se é possível clicar no botão fácil ✔️
-    + Testar se o comportamento do botão está correto ✔️
-    + Testar se a tela de menu foi limpa ✔️
-    + Testar se o a tela de jogo foi criada ✔️
+    + Testar se o botão fácil está visível
+    + Testar se é possível clicar no botão fácil
+    + Testar se o comportamento do botão está correto
+    + Testar se a tela de menu foi limpa
+    + Testar se o a tela de jogo foi criada
 
 3. Deve ser possível selecionar o nível intermediário
-    + Testar se o botão intermediário está visível ✔️
-    + Testar se é possível clicar no botão intermediário ✔️
-    + Testar se o comportamento do botão está correto ✔️
-    + Testar se a tela de menu foi limpa ✔️
-    + Testar se o a tela de jogo foi criada ✔️
+    + Testar se o botão intermediário está visível
+    + Testar se é possível clicar no botão intermediário
+    + Testar se o comportamento do botão está correto
+    + Testar se a tela de menu foi limpa
+    + Testar se o a tela de jogo foi criada
 
 4. Deve ser possível selecionar o nível difícil
-    + Testar se o botão difícil está visível ✔️
-    + Testar se é possível clicar no botão difícil ✔️
-    + Testar se o comportamento do botão está correto ✔️
-    + Testar se a tela de menu foi limpa ✔️
-    + Testar se o a tela de jogo foi criada ✔️
+    + Testar se o botão difícil está visível
+    + Testar se é possível clicar no botão difícil
+    + Testar se o comportamento do botão está correto
+    + Testar se a tela de menu foi limpa
+    + Testar se o a tela de jogo foi criada
 
 5. O jogo deve ter um tabuleiro de jogo com dimensões 8x8 para o nível fácil
-    + Testar se o jogo em "Fácil" tem 8 linhas ✔️
-    + Testar se o jogo em “Fácil” tem 8 colunas. ✔️
-    + Testar se o tabuleiro está vazio no início. ✔️
-    + Testar se é possível marcar no tabuleiro. ✔️
-    + Testar se a posição de jogada está dentro do tabuleiro. ✔️
-    + Testar se o jogo inicia exibindo o time da partida ✔️
-    + Testar se o jogo deixa visível o botão de pausa da partida ✔️
-    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
-    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
+    + Testar se o jogo em "Fácil" tem 8 linhas
+    + Testar se o jogo em “Fácil” tem 8 colunas.
+    + Testar se o tabuleiro está vazio no início.
+    + Testar se é possível marcar no tabuleiro.
+    + Testar se a posição de jogada está dentro do tabuleiro.
+    + Testar se o jogo inicia exibindo o time da partida
+    + Testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 6. O jogo deve ter um tabuleiro de jogo com dimensões 10x16 para intermediário
-    + Testar se o jogo em “Intermediário” tem 10 linhas. ✔️
-    + Testar se o jogo em “Intermediário” tem 16 colunas. ✔️
-    + Testar se o tabuleiro está vazio no início ✔️
-    + Testar se é possível marcar no tabuleiro ✔️
-    + Testar se a posição de jogada está dentro do tabuleiro ✔️
-    + Testar se o jogo inicia exibindo o time da partida ✔️
-    + testar se o jogo deixa visível o botão de pausa da partida ✔️
-    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
-    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
+    + Testar se o jogo em “Intermediário” tem 10 linhas.
+    + Testar se o jogo em “Intermediário” tem 16 colunas.
+    + Testar se o tabuleiro está vazio no início
+    + Testar se é possível marcar no tabuleiro
+    + Testar se a posição de jogada está dentro do tabuleiro
+    + Testar se o jogo inicia exibindo o time da partida
+    + testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 7. O jogo deve ter um tabuleiro de jogo com dimensões 24x24 para difícil.
-    + Testar se o jogo em “Difícil” tem 24 linhas ✔️
-    + Testar se o jogo em “Difícil” tem 24 colunas ✔️
-    + Testar se o tabuleiro está vazio no início ✔️
-    + Testar se é possível marcar no tabuleiro ✔️
-    + Testar se a posição de jogada está dentro do tabuleiro ✔️
-    + Testar se o jogo inicia exibindo o time da partida ✔️
-    + testar se o jogo deixa visível o botão de pausa da partida ✔️
-    + Testar se o jogo deixa visível o botão de abandonar a partida ✔️
-    + Testar se o jogo deixa visível o botão de reiniciar a partida ✔️
+    + Testar se o jogo em “Difícil” tem 24 linhas
+    + Testar se o jogo em “Difícil” tem 24 colunas
+    + Testar se o tabuleiro está vazio no início
+    + Testar se é possível marcar no tabuleiro
+    + Testar se a posição de jogada está dentro do tabuleiro
+    + Testar se o jogo inicia exibindo o time da partida
+    + testar se o jogo deixa visível o botão de pausa da partida
+    + Testar se o jogo deixa visível o botão de abandonar a partida
+    + Testar se o jogo deixa visível o botão de reiniciar a partida
 
 8. O número de bombas no tabuleiro deve ser fixo
-    + Testar se o número de bombas do tabuleiro é maior que o número fixo ✔️
-    + Testar se o número de bombas do tabuleiro é menor que o número fixo ✔️
-    + Testar se o número de bombas é igual ao número fixo ✔️
-    + Testar se o tabuleiro só contém bombas ✔️
-    + Testar se o tabuleiro não contém bombas ✔️
-    + Testar se as bombas estão posicionadas em locais válidos ✔️
-    + Testar se existe alguma bomba no tabuleiro ✔️
-    + Testar se o número de bombas é negativo ✔️
-    + Testar se ha bombas dentro do tabuleiro ✔️
-    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de  teste, um para string, outro para boolean e outro para inválido) ✔️
-    + Testar se existem espaços suficientes para as bombas ✔️
-    + Testar se o tabuleiro é de tamanho vazio ✔️
+    + Testar se o número de bombas do tabuleiro é maior que o número fixo
+    + Testar se o número de bombas do tabuleiro é menor que o número fixo
+    + Testar se o número de bombas é igual ao número fixo
+    + Testar se o tabuleiro só contém bombas
+    + Testar se o tabuleiro não contém bombas
+    + Testar se as bombas estão posicionadas em locais válidos
+    + Testar se existe alguma bomba no tabuleiro
+    + Testar se o número de bombas é negativo
+    + Testar se ha bombas dentro do tabuleiro
+    + Testar se as bombas são válidas (ex: no código precisa ser inteiro, passamos uma string para testar, então são 3 casos de  teste, um para string, outro para boolean e outro para inválido)
+    + Testar se existem espaços suficientes para as bombas
+    + Testar se o tabuleiro é de tamanho vazio
 
 9. As bombas devem ser organizadas de forma aleatória dentro do tabuleiro
-    + Testar se todas as bombas estão dentro do tabuleiro ✔️
-    + Testar se alguma bomba está sendo colocada fora do tabuleiro ✔️
-    + Testar se as bombas estão organizadas sequencialmente nas linhas do tabuleiro ✔️
-    + Testar se as bombas estão organizadas sequencialmente nas colunas do tabuleiro  ✔️
-    + Testar se as bombas podem ser organizadas em todas as zonas do tabuleiro  ✔️
-    + Testar se as bombas estão sendo organizadas de forma aleatória ✔️
+    + Testar se todas as bombas estão dentro do tabuleiro
+    + Testar se alguma bomba está sendo colocada fora do tabuleiro
+    + Testar se as bombas estão organizadas sequencialmente nas linhas do tabuleiro
+    + Testar se as bombas estão organizadas sequencialmente nas colunas do tabuleiro
+    + Testar se as bombas podem ser organizadas em todas as zonas do tabuleiro
+    + Testar se as bombas estão sendo organizadas de forma aleatória
 
 10. O jogador deve ser informado sobre o número de bombas no tabuleiro antes de iniciar o jogo.
-    + Testar se o tabuleiro é gerado ✔️
-    + Testar se existem bombas no tabuleiro ✔️
-    + Testar se o número de bombas do nível fácil está correto ✔️
-    + Testar se o número de bombas do nível intermediário está correto ✔️
-    + Testar se o número de bombas do nível difícil está correto ✔️
-    + Testar se o popup com a informação está sendo criado corretamente ✔️
-    + Testar se a informação está visível para o usuário ✔️
-    + Testar se as bombas são distribuídas de forma aleatória ✔️
+    + Testar se o tabuleiro é gerado
+    + Testar se existem bombas no tabuleiro
+    + Testar se o número de bombas do nível fácil está correto
+    + Testar se o número de bombas do nível intermediário está correto
+    + Testar se o número de bombas do nível difícil está correto
+    + Testar se o popup com a informação está sendo criado corretamente
+    + Testar se a informação está visível para o usuário
+    + Testar se as bombas são distribuídas de forma aleatória
 
 11. Todas as zonas do tabuleiro devem começar cobertas e sem bandeira.
     + Testar se o tabuleiro está sendo criado
