@@ -518,6 +518,3 @@
 
     - Classes de equivalência
     - Caixa preta
-    - Testes Unitários
-    - Testes de Stress
-    - Testes de Usabilidade
