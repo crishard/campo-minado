@@ -160,7 +160,6 @@
     + Testar se o time consegue exibir o tempo após um longo período de partida
     + Testar se o time do jogo é pausado corretamente
     + Testar se o time do jogo continua corretamente após a partida ser retomada
-    + Testar se o time da partida é iniciado manualmente
     + Testar se o time da partida é parado em caso de vitória
     + Testar se o time da partida é parado em caso de derrota
 

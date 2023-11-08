@@ -54,18 +54,7 @@ class CampoMinado:
         return self.current_difficulty
 
     def restart_game(self):
-        self.game_over = False
-        self.is_game_over = False
-        self.started = False
-        self.flags = [[False for _ in range(self.cols)] for _ in range(self.rows)]
-        self.field = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
-        self.buttons = [[None for _ in range(self.cols)] for _ in range(self.rows)]
-        self.bomb_count = 0
-        self.used_flags = 0
-        self.create_widgets() 
-        self.place_bombs()  
-        self.update_flag_label()  
-        self.update_time()  
+        CampoMinado(self.root, self.rows, self.cols, self.bombs, lambda: None)  
 
 
     def create_widgets(self):
