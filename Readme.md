@@ -45,6 +45,12 @@
 
 ## Como rodar o Projeto?
 
+### Pré-requisitos
+
+- [Python](#https://www.python.org/downloads/)
+
+- [Pip](#https://pypi.org/project/pip/)
+
 ### Clone o repositório
 
 ```sh
