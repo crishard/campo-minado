@@ -513,3 +513,11 @@
     + Testar se é possível remover uma bandeira
     + Testar se é possível pausar a partida
     + Testar se é possível retomar a partida
+
+## Técnicas utilizadas
+
+    - Classes de equivalência
+    - Caixa preta
+    - Testes Unitários
+    - Testes de Stress
+    - Testes de Usabilidade
