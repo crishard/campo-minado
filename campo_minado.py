@@ -62,10 +62,10 @@ class CampoMinado:
         self.buttons = [[None for _ in range(self.cols)] for _ in range(self.rows)]
         self.bomb_count = 0
         self.used_flags = 0
-        self.create_widgets()  # Recria os widgets
-        self.place_bombs()  # Reposiciona as bombas
-        self.update_flag_label()  # Atualiza a contagem de bandeiras
-        self.update_time()  # Reinicia o contador de tempo
+        self.create_widgets() 
+        self.place_bombs()  
+        self.update_flag_label()  
+        self.update_time()  
 
 
     def create_widgets(self):
@@ -101,10 +101,8 @@ class CampoMinado:
                 else:
                     return []
         except FileNotFoundError:
-            # Se o arquivo não existe, comece com uma lista vazia
             return []
         except json.decoder.JSONDecodeError:
-            # Se o arquivo existe, mas não é um JSON válido, comece com uma lista vazia
             return []
 
 
@@ -160,7 +158,7 @@ class CampoMinado:
 
 
     def on_right_click(self, event, row, col):
-        self.bomb_count = on_right_click_function(self,
+        self.bomb_count = on_right_click_function(self.update_flag_label, self.used_flags,
             event, self.game_over, self.paused, self.bombs, self.flags, self.buttons, row, col, self.bomb_count, self.started)
 
     def on_button_click(self, row, col):
@@ -293,7 +291,6 @@ def main():
     root.mainloop()
 
 # Instancia do jogo para testes
-
 
 def create_game_instance(root, rows, cols, bombs):
     game = CampoMinado(root, rows, cols, bombs, lambda: None)

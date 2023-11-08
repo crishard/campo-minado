@@ -644,47 +644,60 @@ encontrado um valor diferente de 0 - nível difícil
     + Testar se o time da partida é iniciado ao tentar descobrir uma zona
     + Testar se o time é iniciado manualmente
 
-56. Deve ser possivel salvar uma partida no historico apos o fim da partida
+56. Deve ser possível salvar uma partida no histórico apos o fim da partida
     + Testar se a partida acabou
     + Testar se o tempo de partida e um tempo valido
     + Testar se a partida esta sendo salva
-    + Testar se o historico esta salvando o nivel da partida
-    + Testar se o historico esta salvando o resultado da partida em caso de vitoria
-    + Testar se o historico esta salvando o resultado da partida em caso de derrota
-    + Testar se todas as partidas possuem um id unico
-    + Testar se e possivel salvar mais de um resultado
+    + Testar se o histórico esta salvando o nível da partida
+    + Testar se o histórico esta salvando o resultado da partida em caso de vitoria
+    + Testar se o histórico esta salvando o resultado da partida em caso de derrota
+    + Testar se todas as partidas possuem um id único
+    + Testar se e possível salvar mais de um resultado
 
-57. Deve ser possivel permanecer em partida durante um longo periodo de tempo
-    + Testar se o time da partida e atualizado mesmo apos um longo periodo de partida
-    + Verificar a criacao do popup de vitoria com uma partida muito longa
-    + Verificar a criacao do popup de derrota com uma partida muito longa
-    + Testar se e possivel adicionar uma bandeira
-    + Testar se e possivel remover uma bandeira
-    + Testar se e possivel descobrir uma zona
-    + Testar se e possivel abandonar a partida
-    + Testar se e possivel sair do jogo
-58. O comportamento do botao pause/retomar deve permanecer o mesmo, ainda que a partida esteja durando muito tempo
+57. Deve ser possível permanecer em partida durante um longo período de tempo
+    + Testar se o time da partida e atualizado mesmo apos um longo período de partida
+    + Verificar a criação do popup de vitoria com uma partida muito longa
+    + Verificar a criação do popup de derrota com uma partida muito longa
+    + Testar se e possível adicionar uma bandeira
+    + Testar se e possível remover uma bandeira
+    + Testar se e possível descobrir uma zona
+    + Testar se e possível abandonar a partida
+    + Testar se e possível sair do jogo
+
+58. O comportamento do botão pause/retomar deve permanecer o mesmo, ainda que a partida esteja durando muito tempo
     + Testar se o tempo de partida ainda segue sendo atualizado
-    + Testar se e possivel pausar uma partida
+    + Testar se e possível pausar uma partida
     + Testar se a mensagem de partida pausada esta sendo exibida
-    + Testar se e possivel retomar a partida
-    + Testar se a label do botao esta sendo atualizada corretamente
+    + Testar se e possível retomar a partida
+    + Testar se a label do botão esta sendo atualizada corretamente
     + Testar se o time da partida volta a atualizar corretamente com a partida em andamento
 
-59. O comportamento do botao pause/retomar deve permanecer o mesmo, ainda que o mesmo seja clicado diversas vezes em sequencia
-    + Testar se a label do botao esta correta apos varios clicks
-    + Testar se a mensgaem de partida pausada e exibida
-    + Testar se o comportamento do botao permanece inalterado
-    + Testar se o time corresponde ao click do botao
+59. O comportamento do botão pause/retomar deve permanecer o mesmo, ainda que o mesmo seja clicado diversas vezes em sequencia
+    + Testar se a label do botão esta correta apos vários clicks
+    + Testar se a mensagem de partida pausada e exibida
+    + Testar se o comportamento do botão permanece inalterado
+    + Testar se o time corresponde ao click do botão
     + Testar se o botão de pausa funciona corretamente após diversos clicks em pausa e retomar
     + testar se o botão de pausa funciona corretamente após o jogo permanecer em andamento durante um longo período de tempo
     + Testar se o botão de retomar funciona corretamente após o jogo permanecer pausado após um longo período de tempo
     + Testar se a label do botão de pausa e retomar é atualizado corretamente após divisas ações de pausar e retomar
 
-60. O software deve conter um botao de jogar novamente durante a partida
-    + Testar se o botao  esta sendo criado corretamente
-    + Testar se ao clicar no botao uma nova partida e iniciada
+60. O software deve conter um botão de jogar novamente durante a partida
+    + Testar se o botão  esta sendo criado corretamente
+    + Testar se ao clicar no botão uma nova partida e iniciada
     + Testar se a nova partida tem o mesmo numero de linhas que a partida anterior
     + Testar se a nova partida tem o mesmo numero de colunas que a partida anterior
     + Testar se a nova partida tem o mesmo numero de bombas que a partida anterior
-    + Testar se a nova partida tem o mesmo numero de bandeiuras que a partida anterior
+    + Testar se a nova partida tem o mesmo numero de bandeiras que a partida anterior
+    + Testar se o time da partida foi reiniciado
+    + Testar se o contator de bandeiras foi reiniciado
+    + Testar se todas as zonas do tabuleiro estão cobertas
+    + Testar se todas as zonas do tabuleiro estão sem bandeiras
+    + Testar se o botão de pausa está sendo exibido
+    + Testar se a label do botão está correta
+    + Testar se a partida antes do click de reiniciar foi salva no histórico de partidas
+    + Testar se é possível descobrir uma zona
+    + Testar se é possível adicionar uma bandeira
+    + Testar se é possível remover uma bandeira
+    + Testar se é possível pausar a partida
+    + Testar se é possível retomar a partida

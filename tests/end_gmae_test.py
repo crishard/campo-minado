@@ -14,6 +14,11 @@ row = 5
 col = 5
 bomb_count = -2
 started = True
+flag_label = None
+used_flags = 0
+
+def update_flag_label():
+        flags_left = bombs - used_flags
 
 @pytest.fixture
 def root():
@@ -59,7 +64,8 @@ def test_end_game_safe_zone_clicked(root):
 def test_game_flag_zone_clicked():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
-    result = on_right_click_function(
+    result = on_right_click_function( update_flag_label,
+used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
 
     assert game_over is False

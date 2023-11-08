@@ -6,18 +6,6 @@
         "time_elapsed": "00:00:00"
     },
     {
-        "id": "a9506b9c-e23f-4ab6-b3aa-7cd1646aecc7",
-        "difficulty": "",
-        "result": "Derrota",
-        "time_elapsed": "00:00:00"
-    },
-    {
-        "id": "5c71d1e4-445f-495e-b99e-648dd58ce0f3",
-        "difficulty": "",
-        "result": "Vit\u00f3ria",
-        "time_elapsed": "00:00:00"
-    },
-    {
         "id": "1315252f-bffa-4767-98f2-54f33a3a301d",
         "difficulty": "F\u00e1cil",
         "result": "Derrota",
@@ -58,5 +46,11 @@
         "difficulty": "F\u00e1cil",
         "result": "Derrota",
         "time_elapsed": "00:00:00"
+    },
+    {
+        "id": "da7259d9-8b9f-45e9-8edc-6d145e8ede3e",
+        "difficulty": "F\u00e1cil",
+        "result": "Derrota",
+        "time_elapsed": "00:00:01"
     }
 ]

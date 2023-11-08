@@ -14,7 +14,12 @@ row = 5
 col = 5
 bomb_count = -2
 started = True
+flag_label = None
+used_flags = 0
 
+def update_flag_label():
+        flags_left = bombs - used_flags
+        # flag_label.config(text=f"Bandeiras para uso: {flags_left}")
 
 @pytest.fixture
 def root():
@@ -29,7 +34,7 @@ def test_zone_is_covered_add_flag():
 def test_add_flag():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert buttons[row][col]['text'] == '🏳'
 
@@ -52,7 +57,7 @@ def test_play_outside_matrix_easy(root):
     game_instance = game
 
     try:
-        result = on_right_click_function(
+        result = on_right_click_function(update_flag_label, used_flags,
             event, game_over, paused, bombs, flags, buttons, row_to_click, col_to_click, bomb_count, started)
     except Exception as e:
         assert str(e) == "list index out of range"
@@ -108,7 +113,7 @@ def test_zone_is_covered():
 def test_on_right_click_function_unset_flag():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert buttons[row][col]['text'] == ''
 
@@ -128,7 +133,7 @@ def test_flags_empty(root):
 def test_count_flag():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result is -1
 
@@ -141,7 +146,7 @@ def test_on_right_click_function_game_not_started():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
@@ -153,7 +158,7 @@ def test_on_right_click_function_max_flags_reached():
     bomb_count = 5
     flags[row][col] = False
     buttons[row][col]['text'] = ''
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
     assert flags[row][col] is False
@@ -165,7 +170,7 @@ def test_on_right_click_function_too_many_flags():
     bomb_count = 6
     flags[row][col] = False
     buttons[row][col]['text'] = ''
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count
     assert flags[row][col] is False
@@ -177,7 +182,7 @@ def test_on_right_click_function_not_paused_with_flag_set():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳' # aqui tenho -1 bandeira
     initial_bomb_count = bomb_count - 1 # aqui subtraio a bandeira adicionada anteriormente
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
 
@@ -189,7 +194,7 @@ def test_on_right_click_function_invalid_flag_set():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     initial_bomb_count = bomb_count
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count - 1
     assert flags[row][col] is False
@@ -202,7 +207,7 @@ def test_on_right_click_function_game_over_with_invalid_flag_set():
     flags[row][col] = True
     buttons[row][col]['text'] = '🚩'
     initial_bomb_count = bomb_count
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, True, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is True
@@ -214,7 +219,7 @@ def test_on_right_click_function_game_over_with_invalid_flag_set():
 def test_on_right_click_function_increment_bomb_count_with_invalid_flag():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, paused, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == bomb_count - 1
     assert flags[row][col] is False
@@ -228,7 +233,7 @@ def test_on_right_click_function_paused_with_unset_flag():
     flags[row][col] = False
     buttons[row][col]['text'] = ''
     initial_bomb_count = bomb_count
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is False
@@ -241,7 +246,7 @@ def test_on_right_click_function_paused_with_flag_set():
     flags[row][col] = True
     buttons[row][col]['text'] = '🏳'
     initial_bomb_count = bomb_count
-    result = on_right_click_function(
+    result = on_right_click_function(update_flag_label, used_flags,
         event, game_over, True, bombs, flags, buttons, row, col, bomb_count, started)
     assert result == initial_bomb_count
     assert flags[row][col] is True
